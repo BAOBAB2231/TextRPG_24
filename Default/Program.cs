@@ -1,10 +1,10 @@
 ﻿using System;
-using System.Collections.Generic;
 
 namespace SpartaDungeon
 {
     class Program
     {
+        // 플레이어 정보 클래스
         class Player
         {
             public string Name { get; set; } = "Chad";
@@ -17,7 +17,7 @@ namespace SpartaDungeon
 
             public void ShowStatus()
             {
-                Console.WriteLine($"\n상태보기");
+                Console.WriteLine("\n상태보기");
                 Console.WriteLine("캐릭터의 정보가 표시됩니다.\n");
 
                 Console.WriteLine($"Lv.{Level}");
@@ -29,21 +29,7 @@ namespace SpartaDungeon
             }
         }
 
-        class Monster
-        {
-            public string Name { get; set; }
-            public int Level { get; set; }
-            public int Health { get; set; }
-            public int Attack { get; set; }
-
-            public void ShowInfo()
-            {
-                Console.WriteLine($"Lv.{Level} {Name} - 체력: {Health}, 공격력: {Attack}");
-            }
-        }
-
         static Player player = new Player();
-        static Random random = new Random();
 
         static void Main(string[] args)
         {
@@ -69,7 +55,7 @@ namespace SpartaDungeon
                 }
                 else
                 {
-                    Console.WriteLine($"\n잘못된 입력입니다.");
+                    Console.WriteLine("\n잘못된 입력입니다.");
                     Pause();
                 }
             }
@@ -91,47 +77,15 @@ namespace SpartaDungeon
                 }
                 else
                 {
-                    Console.WriteLine($"\n잘못된 입력입니다.\n");
+                    Console.WriteLine("\n잘못된 입력입니다.\n");
                 }
             }
         }
 
         static void StartBattle()
         {
-            Console.Clear();
-            Console.WriteLine("전투를 시작합니다!\n");
-
-            List<Monster> monsterList = GenerateRandomMonsters();
-
-            Console.WriteLine($"몬스터 {monsterList.Count}마리가 등장했습니다!\n");
-            foreach (var monster in monsterList)
-            {
-                monster.ShowInfo();
-            }
-
+            Console.WriteLine("\n[전투를 시작합니다!]");
             Pause();
-        }
-
-        static List<Monster> GenerateRandomMonsters()
-        {
-            int monsterCount = random.Next(1, 5); // 1~4마리
-            List<Monster> monsters = new List<Monster>();
-
-            for (int i = 0; i < monsterCount; i++)
-            {
-                int choice = random.Next(0, 3); // 0~2 랜덤
-                Monster m = choice switch
-                {
-                    0 => new Monster { Name = "미니언", Level = 2, Health = 15, Attack = 5 },
-                    1 => new Monster { Name = "공허충", Level = 3, Health = 10, Attack = 9 },
-                    2 => new Monster { Name = "대포미니언", Level = 5, Health = 25, Attack = 8 },
-                    _ => null
-                };
-
-                monsters.Add(m);
-            }
-
-            return monsters;
         }
 
         static void Pause()
