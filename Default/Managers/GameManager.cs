@@ -9,7 +9,7 @@ namespace ConsoleApp8.Class
 {
     public class GameManager
     {
-        private IScene? _currentScene;
+        private IScene _currentScene;
 
         public void StartGame(IScene initialScene)
         {

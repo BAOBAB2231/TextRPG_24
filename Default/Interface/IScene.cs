@@ -9,6 +9,6 @@ namespace ConsoleApp8.Interface
     public interface IScene
     {
         // 장면을 업데이트하고 다음 장면을 반환하거나, 게임 종료 시 null을 반환합니다.
-        IScene? Update();
+        IScene Update();
     }
 }

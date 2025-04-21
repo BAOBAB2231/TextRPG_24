@@ -1,10 +1,46 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\qkgjd\\source\\repos\\SpartaDungeon_AllInOne_Framework472\\Default\\",
+  "WorkspaceRootPath": "C:\\Users\\whtjd\\OneDrive\\\uBB38\uC11C\\GitHub\\TextRPG_24\\Default\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{E3F2351C-F112-410F-94AB-4611D3A8EBC2}|Default.csproj|c:\\users\\qkgjd\\source\\repos\\spartadungeon_allinone_framework472\\default\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{E3F2351C-F112-410F-94AB-4611D3A8EBC2}|Default.csproj|c:\\users\\whtjd\\onedrive\\\uBB38\uC11C\\github\\textrpg_24\\default\\scenes\\mainscene.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E3F2351C-F112-410F-94AB-4611D3A8EBC2}|Default.csproj|solutionrelative:scenes\\mainscene.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E3F2351C-F112-410F-94AB-4611D3A8EBC2}|Default.csproj|c:\\users\\whtjd\\onedrive\\\uBB38\uC11C\\github\\textrpg_24\\default\\scenes\\endingscene.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E3F2351C-F112-410F-94AB-4611D3A8EBC2}|Default.csproj|solutionrelative:scenes\\endingscene.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E3F2351C-F112-410F-94AB-4611D3A8EBC2}|Default.csproj|c:\\users\\whtjd\\onedrive\\\uBB38\uC11C\\github\\textrpg_24\\default\\scenes\\battlescene.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E3F2351C-F112-410F-94AB-4611D3A8EBC2}|Default.csproj|solutionrelative:scenes\\battlescene.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E3F2351C-F112-410F-94AB-4611D3A8EBC2}|Default.csproj|c:\\users\\whtjd\\onedrive\\\uBB38\uC11C\\github\\textrpg_24\\default\\scenes\\statusscene.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E3F2351C-F112-410F-94AB-4611D3A8EBC2}|Default.csproj|solutionrelative:scenes\\statusscene.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E3F2351C-F112-410F-94AB-4611D3A8EBC2}|Default.csproj|c:\\users\\whtjd\\onedrive\\\uBB38\uC11C\\github\\textrpg_24\\default\\monsters\\monster.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E3F2351C-F112-410F-94AB-4611D3A8EBC2}|Default.csproj|solutionrelative:monsters\\monster.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E3F2351C-F112-410F-94AB-4611D3A8EBC2}|Default.csproj|c:\\users\\whtjd\\onedrive\\\uBB38\uC11C\\github\\textrpg_24\\default\\characters\\character.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E3F2351C-F112-410F-94AB-4611D3A8EBC2}|Default.csproj|solutionrelative:characters\\character.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E3F2351C-F112-410F-94AB-4611D3A8EBC2}|Default.csproj|c:\\users\\whtjd\\onedrive\\\uBB38\uC11C\\github\\textrpg_24\\default\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{E3F2351C-F112-410F-94AB-4611D3A8EBC2}|Default.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E3F2351C-F112-410F-94AB-4611D3A8EBC2}|Default.csproj|c:\\users\\whtjd\\onedrive\\\uBB38\uC11C\\github\\textrpg_24\\default\\scenes\\titlescene.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E3F2351C-F112-410F-94AB-4611D3A8EBC2}|Default.csproj|solutionrelative:scenes\\titlescene.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E3F2351C-F112-410F-94AB-4611D3A8EBC2}|Default.csproj|c:\\users\\whtjd\\onedrive\\\uBB38\uC11C\\github\\textrpg_24\\default\\interface\\iscene.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E3F2351C-F112-410F-94AB-4611D3A8EBC2}|Default.csproj|solutionrelative:interface\\iscene.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E3F2351C-F112-410F-94AB-4611D3A8EBC2}|Default.csproj|c:\\users\\whtjd\\onedrive\\\uBB38\uC11C\\github\\textrpg_24\\default\\managers\\gamemanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E3F2351C-F112-410F-94AB-4611D3A8EBC2}|Default.csproj|solutionrelative:managers\\gamemanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -14,21 +50,134 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 5,
           "Children": [
             {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{d78612c7-9962-4b83-95d9-268046dad23a}"
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "EndingScene.cs",
+              "DocumentMoniker": "C:\\Users\\whtjd\\OneDrive\\\uBB38\uC11C\\GitHub\\TextRPG_24\\Default\\Scenes\\EndingScene.cs",
+              "RelativeDocumentMoniker": "Scenes\\EndingScene.cs",
+              "ToolTip": "C:\\Users\\whtjd\\OneDrive\\\uBB38\uC11C\\GitHub\\TextRPG_24\\Default\\Scenes\\EndingScene.cs",
+              "RelativeToolTip": "Scenes\\EndingScene.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAcwBgAAAAtAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-21T12:14:46.804Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "BattleScene.cs",
+              "DocumentMoniker": "C:\\Users\\whtjd\\OneDrive\\\uBB38\uC11C\\GitHub\\TextRPG_24\\Default\\Scenes\\BattleScene.cs",
+              "RelativeDocumentMoniker": "Scenes\\BattleScene.cs",
+              "ToolTip": "C:\\Users\\whtjd\\OneDrive\\\uBB38\uC11C\\GitHub\\TextRPG_24\\Default\\Scenes\\BattleScene.cs",
+              "RelativeToolTip": "Scenes\\BattleScene.cs",
+              "ViewState": "AgIAABwBAAAAAAAAAAASwC0BAAAlAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-21T12:13:46.762Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "StatusScene.cs",
+              "DocumentMoniker": "C:\\Users\\whtjd\\OneDrive\\\uBB38\uC11C\\GitHub\\TextRPG_24\\Default\\Scenes\\StatusScene.cs",
+              "RelativeDocumentMoniker": "Scenes\\StatusScene.cs",
+              "ToolTip": "C:\\Users\\whtjd\\OneDrive\\\uBB38\uC11C\\GitHub\\TextRPG_24\\Default\\Scenes\\StatusScene.cs",
+              "RelativeToolTip": "Scenes\\StatusScene.cs",
+              "ViewState": "AgIAABUAAAAAAAAAAAAywCMAAAAgAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-21T12:13:19.345Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Monster.cs",
+              "DocumentMoniker": "C:\\Users\\whtjd\\OneDrive\\\uBB38\uC11C\\GitHub\\TextRPG_24\\Default\\Monsters\\Monster.cs",
+              "RelativeDocumentMoniker": "Monsters\\Monster.cs",
+              "ToolTip": "C:\\Users\\whtjd\\OneDrive\\\uBB38\uC11C\\GitHub\\TextRPG_24\\Default\\Monsters\\Monster.cs",
+              "RelativeToolTip": "Monsters\\Monster.cs",
+              "ViewState": "AgIAABYAAAAAAAAAAAAiwCAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-21T12:11:38.411Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "Character.cs",
+              "DocumentMoniker": "C:\\Users\\whtjd\\OneDrive\\\uBB38\uC11C\\GitHub\\TextRPG_24\\Default\\Characters\\Character.cs",
+              "RelativeDocumentMoniker": "Characters\\Character.cs",
+              "ToolTip": "C:\\Users\\whtjd\\OneDrive\\\uBB38\uC11C\\GitHub\\TextRPG_24\\Default\\Characters\\Character.cs",
+              "RelativeToolTip": "Characters\\Character.cs",
+              "ViewState": "AgIAAA0AAAAAAAAAAAA4wBUAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-21T12:11:06.259Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 0,
+              "Title": "MainScene.cs",
+              "DocumentMoniker": "C:\\Users\\whtjd\\OneDrive\\\uBB38\uC11C\\GitHub\\TextRPG_24\\Default\\Scenes\\MainScene.cs",
+              "RelativeDocumentMoniker": "Scenes\\MainScene.cs",
+              "ToolTip": "C:\\Users\\whtjd\\OneDrive\\\uBB38\uC11C\\GitHub\\TextRPG_24\\Default\\Scenes\\MainScene.cs",
+              "RelativeToolTip": "Scenes\\MainScene.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAAeAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-21T12:01:35.131Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "IScene.cs",
+              "DocumentMoniker": "C:\\Users\\whtjd\\OneDrive\\\uBB38\uC11C\\GitHub\\TextRPG_24\\Default\\Interface\\IScene.cs",
+              "RelativeDocumentMoniker": "Interface\\IScene.cs",
+              "ToolTip": "C:\\Users\\whtjd\\OneDrive\\\uBB38\uC11C\\GitHub\\TextRPG_24\\Default\\Interface\\IScene.cs*",
+              "RelativeToolTip": "Interface\\IScene.cs*",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAVAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-21T12:00:55.875Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "GameManager.cs",
+              "DocumentMoniker": "C:\\Users\\whtjd\\OneDrive\\\uBB38\uC11C\\GitHub\\TextRPG_24\\Default\\Managers\\GameManager.cs",
+              "RelativeDocumentMoniker": "Managers\\GameManager.cs",
+              "ToolTip": "C:\\Users\\whtjd\\OneDrive\\\uBB38\uC11C\\GitHub\\TextRPG_24\\Default\\Managers\\GameManager.cs",
+              "RelativeToolTip": "Managers\\GameManager.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAWAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-21T11:59:50.864Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "TitleScene.cs",
+              "DocumentMoniker": "C:\\Users\\whtjd\\OneDrive\\\uBB38\uC11C\\GitHub\\TextRPG_24\\Default\\Scenes\\TitleScene.cs",
+              "RelativeDocumentMoniker": "Scenes\\TitleScene.cs",
+              "ToolTip": "C:\\Users\\whtjd\\OneDrive\\\uBB38\uC11C\\GitHub\\TextRPG_24\\Default\\Scenes\\TitleScene.cs",
+              "RelativeToolTip": "Scenes\\TitleScene.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-21T11:59:20.404Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
               "Title": "Program.cs",
-              "DocumentMoniker": "C:\\Users\\qkgjd\\source\\repos\\SpartaDungeon_AllInOne_Framework472\\Default\\Program.cs",
+              "DocumentMoniker": "C:\\Users\\whtjd\\OneDrive\\\uBB38\uC11C\\GitHub\\TextRPG_24\\Default\\Program.cs",
               "RelativeDocumentMoniker": "Program.cs",
-              "ToolTip": "C:\\Users\\qkgjd\\source\\repos\\SpartaDungeon_AllInOne_Framework472\\Default\\Program.cs",
+              "ToolTip": "C:\\Users\\whtjd\\OneDrive\\\uBB38\uC11C\\GitHub\\TextRPG_24\\Default\\Program.cs",
               "RelativeToolTip": "Program.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAARAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAAwAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-04-21T02:40:06.72Z",
               "EditorCaption": ""
