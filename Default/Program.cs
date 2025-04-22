@@ -4,6 +4,7 @@ namespace SpartaDungeon
 {
     class Program
     {
+        static Monster monster = new Monster();
         // 플레이어 정보 클래스
         class Player
         {
@@ -84,8 +85,55 @@ namespace SpartaDungeon
 
         static void StartBattle()
         {
+            Console.Clear();
             Console.WriteLine("\n[전투를 시작합니다!]");
-            Pause();
+            Monster.ShowMonster();
+
+            while (true)
+            {
+                Console.WriteLine("0. 나가기");
+                Console.Write("원하시는 행동을 입력해주세요: ");
+                string input = Console.ReadLine().Trim();
+                if (input == "0")
+                {
+                    Monster.MonsterGroup.Clear();
+                    //모든 몬스터 정보 삭제하는 메서드 추가해야함.
+                    break;
+                }
+                else if (input == "1")
+                {
+                    Battle();
+                }
+                else
+                {
+                    Console.WriteLine("\n잘못된 입력입니다.\n");
+                }
+            }
+        }
+
+        static void Battle()
+        {
+            Console.Clear();
+            Console.WriteLine("\n[전투를 시작합니다!]");
+            Monster.Encounter();
+
+            while (true)
+            {
+                Console.WriteLine("0. 나가기");
+                Console.Write("원하시는 행동을 입력해주세요: ");
+                string input = Console.ReadLine().Trim();
+                //switch (input) {
+                //    case "0":
+                //        break;
+                //    case "1":
+                //    case "2":
+                //    case "3":
+                //    case "4":
+                //        if ()
+                //        { };
+                //        return;
+                //}
+            }
         }
 
         static void Pause()
