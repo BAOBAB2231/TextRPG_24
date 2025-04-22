@@ -4,11 +4,11 @@ namespace SpartaDungeon
     {
         public override void InitStats()
         {
-            Name = "공허벌레";      // 이름
-            Level = 2;             // 중간 난이도
-            MaxHealth = 20;        // 체력이 낮음
-            Health = MaxHealth;    // 현재 체력 초기화
-            Attack = 7;            // 공격력은 비교적 높음
+            Name = "공허충";      
+            Level = 2;            
+            MaxHealth = 20;        
+            Health = MaxHealth;   
+            Attack = 7;            
         }
     }
 }
