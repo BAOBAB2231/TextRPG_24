@@ -18,10 +18,10 @@ namespace ConsoleApp8.Scenes
             // 여기서는 간단하게 새로 생성
             public MainScene()
             {
-                _player = new Character(); // 기본값으로 캐릭터 생성
+            //_player = new Character(); ->  updata : 케릭씬에서 만든 케릭으로 캐릭터 생성
             }
-            // 다른 Scene에서 돌아올 때 Character 상태를 유지하기 위한 생성자
-            public MainScene(Character player)
+        // 다른 Scene에서 돌아올 때 Character 상태를 유지하기 위한 생성자
+        public MainScene(Character player)
             {
                 _player = player;
             }

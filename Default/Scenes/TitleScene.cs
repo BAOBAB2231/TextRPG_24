@@ -27,10 +27,10 @@ namespace ConsoleApp8.Scenes
 
             switch (input)
             {
-                case "1":                   
-                    // MainScene으로 전환
-                    
-                    return new MainScene();
+                case "1":
+                    // CharacterScene으로 전환
+
+                    return new CharacterScene();
 
                 case "2":
                     // 게임 종료 (null 반환)

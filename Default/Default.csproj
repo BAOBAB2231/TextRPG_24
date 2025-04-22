@@ -50,6 +50,7 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Scenes\BattleScene.cs" />
+    <Compile Include="Scenes\CharacterScene.cs" />
     <Compile Include="Scenes\EndingScene.cs" />
     <Compile Include="Scenes\MainScene.cs" />
     <Compile Include="Scenes\StatusScene.cs" />
