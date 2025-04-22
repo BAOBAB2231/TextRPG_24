@@ -5,7 +5,7 @@ namespace SpartaDungeon
     {
         public override void InitStats()
         {
-            Name = "공허벌레";
+            Name = "공허충";
             MaxHealth = 20;
             Attack = 7;
         }
