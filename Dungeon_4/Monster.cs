@@ -1,4 +1,3 @@
-
 namespace SpartaDungeon
 {
     public class Monster
@@ -9,7 +8,6 @@ namespace SpartaDungeon
         public int Health { get; set; }
         public int Attack { get; set; }
         public bool IsDead { get; set; }
-
         public virtual void InitStats() { }
     }
 }

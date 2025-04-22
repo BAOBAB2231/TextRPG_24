@@ -1,6 +1,4 @@
-
 using System;
-
 namespace SpartaDungeon
 {
     public class Player
@@ -13,7 +11,6 @@ namespace SpartaDungeon
         public int Health { get; set; } = 100;
         public int Gold { get; set; } = 500;
         public int PreviousHealth { get; set; }
-
         public void ShowStatus()
         {
             Console.WriteLine("===== 상태 보기 =====");

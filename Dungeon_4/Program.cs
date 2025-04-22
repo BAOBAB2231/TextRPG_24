@@ -1,6 +1,4 @@
-
 using System;
-
 namespace SpartaDungeon
 {
     class Program
@@ -9,7 +7,6 @@ namespace SpartaDungeon
         {
             Player player = new Player();
             BattleManager battleManager = new BattleManager(player);
-
             while (true)
             {
                 Console.Clear();
@@ -19,7 +16,6 @@ namespace SpartaDungeon
                 Console.WriteLine("0. 게임 종료");
                 Console.Write("메뉴를 선택하세요: ");
                 string input = Console.ReadLine();
-
                 if (input == "1")
                 {
                     Console.Clear();
