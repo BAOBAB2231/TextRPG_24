@@ -13,10 +13,14 @@ namespace ConsoleApp8.Scenes
     {
         PlayerTurn_SelectAction, // 플레이어 행동 선택
         PlayerTurn_SelectTarget, // 플레이어 공격 대상 선택
+        PlayerTurn_SelectSkill, //  스킬 선택
+        PlayerTurn_SelectSkillTarget, //  스킬 대상 선택
+
         PlayerTurn_ShowResult,   // 플레이어 공격 결과 표시
         EnemyTurn_ShowResult,    // 몬스터 공격 결과 표시
         BattleOver_Victory,      // 전투 승리
         BattleOver_Lose          // 전투 패배
+
     }
 
     public class BattleScene : IScene
@@ -81,10 +85,7 @@ namespace ConsoleApp8.Scenes
                 string displayInfo = $"{prefix}Lv.{monster.Level:D2} {monster.Name} {monsterStatus}";
                 if (monster.IsDead)
                 {
-                    // 간단하게 죽었다는 표시 추가 (색상 변경 어려움)
-                    // Console.ForegroundColor = ConsoleColor.DarkGray; // 색상 변경 시도
-                    // Console.WriteLine(displayInfo);
-                    // Console.ResetColor();
+
                     Console.WriteLine($"[DEAD] {displayInfo.TrimStart('0', '1', '2', '3', '4', '.', ' ')}"); // 번호 제거하고 [DEAD] 추가
                 }
                 else
@@ -98,6 +99,8 @@ namespace ConsoleApp8.Scenes
             Console.WriteLine("[내정보]");
             Console.WriteLine($"Lv.{_player.Level:D2} {_player.Name} ({_player.Job})");
             Console.WriteLine($"HP {_player.CurrentHealth}/{_player.MaxHealth}");
+            Console.WriteLine($"HP {_player.CurrentMana}/{_player.MaxMana}");
+
             Console.WriteLine();
         }
 
@@ -110,6 +113,8 @@ namespace ConsoleApp8.Scenes
                     return SelectAction();
                 case BattleState.PlayerTurn_SelectTarget:
                     return SelectTarge();
+                case BattleState.PlayerTurn_SelectSkill: //  스킬 선택
+                    return SelectSkill();
                 case BattleState.PlayerTurn_ShowResult:
                     return HandlePlayerAttackResult();
                 case BattleState.EnemyTurn_ShowResult:
@@ -125,12 +130,50 @@ namespace ConsoleApp8.Scenes
             }
         }
 
+
+        private IScene SelectSkill()
+        {
+            DisplayBattleStatus(); // 기본 전투 정보 표시
+            Console.WriteLine("1. 알파스 트라이크");
+            Console.WriteLine("2. 더블 스트라이크");
+            Console.WriteLine("3. 명상");
+
+            Console.WriteLine();
+            Console.Write("원하시는 행동을 입력해주세요.>> ");
+
+
+            while (true)
+            {
+                string input = Console.ReadLine();
+                switch (input)
+                {
+                    case "1":
+                        Console.WriteLine("알파 스트라이크!");
+                        _currentState = BattleState.PlayerTurn_SelectTarget; // 공격 대상 선택 상태로 변경
+
+                        return this; // 다음 루프에서 HandlePlayerTargetSelection 호출
+
+                    case "2":
+                        Console.WriteLine("더블 스트라이크!");
+
+                        return this;
+
+                    default:
+                        Console.WriteLine("잘못된 입력입니다.");
+                        Console.Write(">> ");
+                        break;
+                }
+
+            }
+        }
+
         // --- 각 상태 처리 메서드 (아래에 이어서 구현) ---
         private IScene SelectAction()
         {
             DisplayBattleStatus(); // 기본 전투 정보 표시
             Console.WriteLine("1. 공격");
-            // Console.WriteLine("2. 스킬"); // 추후 확장
+            Console.WriteLine("2. 스킬");
+
             Console.WriteLine();
             Console.Write("원하시는 행동을 입력해주세요.>> ");
 
@@ -142,6 +185,11 @@ namespace ConsoleApp8.Scenes
                     case "1":
                         _currentState = BattleState.PlayerTurn_SelectTarget; // 공격 대상 선택 상태로 변경
                         return this; // 다음 루프에서 HandlePlayerTargetSelection 호출
+
+                    case "2":
+                        _currentState = BattleState.PlayerTurn_SelectSkill;
+                        return this;
+
                     default:
                         Console.WriteLine("잘못된 입력입니다.");
                         Console.Write(">> ");
@@ -311,22 +359,54 @@ namespace ConsoleApp8.Scenes
         private void PlayerAttack(Monster target)
         {
             int baseAttack = _player.Attack;
-            // 오차 계산 (공격력의 10%, 올림)
             int errorMargin = (int)Math.Ceiling(baseAttack * 0.1);
-            // 최종 데미지 (기본 공격력 - 오차 ~ 기본 공격력 + 오차)
-            int damage = _random.Next(baseAttack - errorMargin, baseAttack + errorMargin + 1);
 
+            //  기본 데미지 계산
+            int normalDamage = _random.Next(baseAttack - errorMargin, baseAttack + errorMargin + 1);
+
+            //  회피 기능
+            bool isDodged = _random.Next(100) < 10; //10퍼로 회피함
+            if (isDodged)
+            {
+                Console.WriteLine();
+                Console.WriteLine($"{_player.Name} 의 공격!");
+                Console.WriteLine($"Lv.{target.Level} {target.Name} 이(가) 공격을 회피했습니다!");
+                Console.WriteLine();
+
+                _lastAttackedMonster = target;
+                _lastDamageDealt = 0;
+                return;
+            }
+
+            //  치명타 여부
+            bool isCritical = _random.Next(100) < 15; // 15% 확률
+
+            //  최종 데미지 계산
+            int criticalBonus = isCritical ? (int)Math.Round(normalDamage * 0.6) : 0;
+            int finalDamage = normalDamage + criticalBonus;
+
+            //  출력
             Console.WriteLine();
             Console.WriteLine($"{_player.Name} 의 공격!");
-            Console.WriteLine($"Lv.{target.Level} {target.Name} 을(를) 맞췄습니다. [데미지 : {damage}]");
+            if (isCritical)
+            {
+                Console.WriteLine($"Lv.{target.Level} {target.Name} 을(를) 맞췄습니다. [데미지 : {finalDamage}]" + (isCritical ? " - 치명타 공격!!" : ""));
+            }
+            else
+            {
+                Console.WriteLine($"Lv.{target.Level} {target.Name} 을(를) 맞췄습니다. [데미지 : {finalDamage}]");
+            }
+
             Console.WriteLine();
             Console.WriteLine($"Lv.{target.Level} {target.Name}");
             Console.Write($"HP {target.CurrentHealth} -> ");
-            target.TakeDamage(damage);
+            target.TakeDamage(finalDamage);
             Console.WriteLine(target.IsDead ? "Dead" : $"{target.CurrentHealth}");
 
-            _lastAttackedMonster = target; // 마지막 공격 대상 기록
-            _lastDamageDealt = damage;    // 마지막 데미지 기록
+            _lastAttackedMonster = target;
+            _lastDamageDealt = finalDamage;
+
+
         }
     }
 }

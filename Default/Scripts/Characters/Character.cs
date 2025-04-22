@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using ConsoleApp8.Scripts.Characters;
 
 namespace ConsoleApp8.Characters
 {
@@ -14,11 +15,17 @@ namespace ConsoleApp8.Characters
         public int Attack { get; set; }
         public int Defense { get; set; }
         public int MaxHealth { get; set; } // 최대 체력
-        public int CurrentHealth { get; set; } // 현재 체력
+        public int CurrentHealth { get; set; } // 현재 체력       
+        public int MaxMana { get; set; }  // 최대 마나
+
+        public int CurrentMana { get; set; } // 현재 마나
         public int Gold { get; set; }
 
+        public List<Skills> SkillList { get; set; }
+
+
         // 기본 생성자: 초기값 설정
-        public Character(string name = "Chad", string job = "전사")
+        public Character(string name = "", string job = "전사")
         {
             Level = 1;
             Name = name;
@@ -27,8 +34,22 @@ namespace ConsoleApp8.Characters
             Defense = 5;
             MaxHealth = 100;
             CurrentHealth = MaxHealth; // 시작 시 체력은 최대로
+            MaxMana = 50;
+            CurrentMana = MaxMana;
             Gold = 1500;
+            SkillList = new List<Skills>();
         }
+
+        void GetSkill()
+        {
+            SkillList.Add(new Skills("알파 스트라이크", 5, "공격력 X 2 로 하나의 적을 공격합니다.", 2, SkillType.SingleTarget));
+            SkillList.Add(new Skills("더블 스트라이크", 15, "공격력 X 1.5 로 두명의 적을 공격합니다.", 1.5f, SkillType.RandomTarget, 1));
+            SkillList.Add(new Skills("명상", 10, "명상에 들어가서 회복합니다.", 1, SkillType.SelfTarget));
+
+
+        }
+
+
 
         // 캐릭터가 살아있는지 확인하는 메서드
         public bool IsAlive => CurrentHealth > 0;

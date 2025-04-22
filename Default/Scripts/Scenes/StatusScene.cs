@@ -32,6 +32,7 @@ namespace ConsoleApp8.Scenes
             // TODO: 아이템 장착 시 방어력 변화 반영
             Console.WriteLine($"방어력 : {_player.Defense}");
             Console.WriteLine($"체 력 : {_player.CurrentHealth} / {_player.MaxHealth}"); // 현재/최대 체력 표시
+            Console.WriteLine($"마 나 : {_player.CurrentMana} / {_player.MaxMana}"); // 현재/최대 마나 표시
             Console.WriteLine($"Gold : {_player.Gold} G");
             Console.WriteLine();
             Console.WriteLine("0. 나가기");
@@ -53,4 +54,5 @@ namespace ConsoleApp8.Scenes
             }
         }
     }
+
 }

@@ -44,6 +44,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Scripts\Characters\Character.cs" />
+    <Compile Include="Scripts\Characters\Skill.cs" />
     <Compile Include="Scripts\Interface\IScene.cs" />
     <Compile Include="Scripts\Managers\GameManager.cs" />
     <Compile Include="Scripts\Monsters\Monster.cs" />
