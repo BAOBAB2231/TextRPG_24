@@ -53,6 +53,6 @@ namespace ConsoleApp8.Monsters
 
     public class VoidBug : Monster
     {
-        public VoidBug() : base(3, "공화춘", 10, 3) { } // 공격력 추가
+        public VoidBug() : base(3, "공허충", 10, 3) { } // 공격력 추가
     }
 }
