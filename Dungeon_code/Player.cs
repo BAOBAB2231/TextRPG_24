@@ -10,6 +10,8 @@ namespace SpartaDungeon
         public int Defense { get; set; } = 5;
         public int Health { get; set; } = 100;
         public int Gold { get; set; } = 500;
+        public int MaxHealth { get; set; } = 100;
+
         public int PreviousHealth { get; set; }
         public void ShowStatus()
         {

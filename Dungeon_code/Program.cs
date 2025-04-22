@@ -11,10 +11,10 @@ namespace SpartaDungeon
             {
                 Console.Clear();
                 Console.WriteLine("===========================");
-                Console.WriteLine("🏰   스파르타 마을   🏰");
+                Console.WriteLine("       스파르타 마을       ");
                 Console.WriteLine("===========================\n");
-                Console.WriteLine("[1] 던전 입장");
-                Console.WriteLine("[2] 상태 보기");
+                Console.WriteLine("[1] 상태 보기");
+                Console.WriteLine("[2] 던전 입장");
                 Console.WriteLine("[0] 게임 종료\n");
                 Console.Write("원하는 행동을 선택하세요.\n>> ");
 

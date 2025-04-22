@@ -22,7 +22,7 @@ namespace SpartaDungeon
             while (true)
             {
                 Console.Clear();
-                Console.WriteLine("===== Battle!! =====\n");
+                Console.WriteLine("===== 전투 시작!! =====\n");
 
                 for (int i = 0; i < monsterList.Count; i++)
                 {
@@ -33,7 +33,7 @@ namespace SpartaDungeon
 
                 Console.WriteLine("\n[내정보]");
                 Console.WriteLine($"Lv.{player.Level}  {player.Name} ({player.Job})");
-                Console.WriteLine($"HP {player.Health}/{player.Health}");
+                Console.WriteLine($"HP {player.Health}/{player.MaxHealth}");
 
                 Console.WriteLine("\n0. 취소");
                 Console.WriteLine("\n대상을 선택해주세요.");
@@ -101,6 +101,37 @@ namespace SpartaDungeon
 
                 Console.WriteLine("\n플레이어의 차례로 돌아갑니다. 아무 키나 누르세요.");
                 Console.ReadKey();
+
+
+                if (player.Health <= 0)
+                {
+                    // 패배 처리
+                    Console.Clear();
+                    Console.WriteLine("===========================");
+                    Console.WriteLine("        전투 패배...       ");
+                    Console.WriteLine("===========================\n");
+                    Console.WriteLine("플레이어가 쓰러졌습니다...");
+                    Console.WriteLine("마을로 돌아갑니다.\n");
+                    Console.WriteLine("[Enter]를 눌러 계속합니다.");
+                    Console.ReadLine();
+                    break;
+                }
+
+                // ===== 승리 체크 =====
+                bool allDead = monsterList.TrueForAll(m => m.IsDead);
+                if (allDead)
+                {
+                    Console.Clear();
+                    Console.WriteLine("===========================");
+                    Console.WriteLine("         전투 승리!        ");
+                    Console.WriteLine("===========================\n");
+                    Console.WriteLine("모든 몬스터를 처치했습니다!");
+                    Console.WriteLine("    우리 마을의 영웅!!   \n");
+                    Console.WriteLine("[Enter]를 눌러 마을로 돌아갑니다.");
+                    Console.ReadLine();
+                    break; // 전투 루프 종료
+                }
+
             }
         }
 
