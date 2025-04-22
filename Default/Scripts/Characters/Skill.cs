@@ -19,7 +19,7 @@ namespace ConsoleApp8.Scripts.Characters
 
         public int MPCost { get; set; }
 
-        public string Description { get; set; }
+        public string Description { get; set; } //스킬 설명
 
         public float DamageMultiplier { get; set; }
 

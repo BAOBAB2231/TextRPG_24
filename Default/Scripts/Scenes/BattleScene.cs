@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using ConsoleApp8.Characters;
 using ConsoleApp8.Interface;
 using ConsoleApp8.Monsters;
+using ConsoleApp8.Scripts.Characters;
 
 namespace ConsoleApp8.Scenes
 {
@@ -34,6 +35,9 @@ namespace ConsoleApp8.Scenes
         private int _lastDamageDealt = 0; // 플레이어가 마지막으로 입힌 데미지
         private Monster _currentAttackingMonster = null; // 현재 공격 중인 몬스터
         private int _enemyAttackIndex = 0; // 공격할 몬스터 인덱스
+        private Skills _selectedSkill = null; // 선택된 스킬 저장 필드 추가
+        private bool _isSelectingSkillTarget = false; // 대상 선택이 스킬 때문인지 구분하는 플래그
+
 
         public BattleScene(Character player, IScene previousScene)
         {
@@ -42,6 +46,8 @@ namespace ConsoleApp8.Scenes
             _monsters = new List<Monster>();
             _random = new Random();
             _currentState = BattleState.PlayerTurn_SelectAction; // 초기 상태: 플레이어 행동 선택
+            _selectedSkill = null;
+            _isSelectingSkillTarget = false;
 
             SpawnMonsters();
         }
@@ -99,7 +105,7 @@ namespace ConsoleApp8.Scenes
             Console.WriteLine("[내정보]");
             Console.WriteLine($"Lv.{_player.Level:D2} {_player.Name} ({_player.Job})");
             Console.WriteLine($"HP {_player.CurrentHealth}/{_player.MaxHealth}");
-            Console.WriteLine($"HP {_player.CurrentMana}/{_player.MaxMana}");
+            Console.WriteLine($"MP {_player.CurrentMana}/{_player.MaxMana}");
 
             Console.WriteLine();
         }
@@ -112,7 +118,7 @@ namespace ConsoleApp8.Scenes
                 case BattleState.PlayerTurn_SelectAction:
                     return SelectAction();
                 case BattleState.PlayerTurn_SelectTarget:
-                    return SelectTarge();
+                    return SelectTarget();
                 case BattleState.PlayerTurn_SelectSkill: //  스킬 선택
                     return SelectSkill();
                 case BattleState.PlayerTurn_ShowResult:
@@ -130,42 +136,157 @@ namespace ConsoleApp8.Scenes
             }
         }
 
-
         private IScene SelectSkill()
         {
-            DisplayBattleStatus(); // 기본 전투 정보 표시
-            Console.WriteLine("1. 알파스 트라이크");
-            Console.WriteLine("2. 더블 스트라이크");
-            Console.WriteLine("3. 명상");
-
+            DisplayBattleStatus();
+            for (int i = 0; i < _player.SkillList.Count; i++)
+            {
+                Skills skill = _player.SkillList[i];
+                Console.WriteLine($"{i + 1}. {skill.Name} - MP {skill.MPCost}");
+                Console.WriteLine($"   {skill.Description}");
+            }
             Console.WriteLine();
             Console.Write("원하시는 행동을 입력해주세요.>> ");
-
 
             while (true)
             {
                 string input = Console.ReadLine();
-                switch (input)
+                if (int.TryParse(input, out int skillIndex))
                 {
-                    case "1":
-                        Console.WriteLine("알파 스트라이크!");
-                        _currentState = BattleState.PlayerTurn_SelectTarget; // 공격 대상 선택 상태로 변경
+                    if (skillIndex > 0 && skillIndex <= _player.SkillList.Count)
+                    {
+                        Skills currentSelectedSkill = _player.SkillList[skillIndex - 1]; // 지역 변수에 저장
 
-                        return this; // 다음 루프에서 HandlePlayerTargetSelection 호출
+                        if (_player.CurrentMana >= currentSelectedSkill.MPCost)
+                        {
+                            _selectedSkill = currentSelectedSkill; // 필드에 최종 저장
 
-                    case "2":
-                        Console.WriteLine("더블 스트라이크!");
-
-                        return this;
-
-                    default:
+                            switch (_selectedSkill.Type)
+                            {
+                                case SkillType.SingleTarget:
+                                    _currentState = BattleState.PlayerTurn_SelectTarget;
+                                    _isSelectingSkillTarget = true; // 스킬 대상 선택 플래그 설정
+                                    return this;
+                                case SkillType.RandomTarget:
+                                    UseSkill(_selectedSkill); // 대상 선택 없이 바로 사용
+                                    _currentState = BattleState.PlayerTurn_ShowResult;
+                                    _selectedSkill = null; // 사용 후 초기화
+                                    return this;
+                                default:
+                                    Console.WriteLine("아직 지원되지 않는 스킬 타입입니다.");
+                                    _selectedSkill = null; // 지원 안되므로 초기화
+                                    _currentState = BattleState.PlayerTurn_SelectAction;
+                                    return this;
+                            }
+                        }
+                        else
+                        {
+                            Console.WriteLine("MP가 부족합니다.");
+                            Console.ReadKey();
+                            _currentState = BattleState.PlayerTurn_SelectAction;
+                            return this;
+                        }
+                    }
+                    else
+                    {
                         Console.WriteLine("잘못된 입력입니다.");
-                        Console.Write(">> ");
-                        break;
+                    }
                 }
-
+                else
+                {
+                    Console.WriteLine("숫자를 입력해주세요.");
+                }
+                Console.Write(">> ");
             }
         }
+
+        //private IScene select skills()
+        //{
+        //    DisplayBattleStatus(); // 기본 전투 정보 표시
+        //    Console.WriteLine("1. 알파스 트라이크");
+        //    Console.WriteLine("2. 더블 스트라이크");
+        //    Console.WriteLine("3. 명상");
+
+        //    Console.WriteLine();
+        //    Console.Write("원하시는 행동을 입력해주세요.>> ");
+
+
+        //    while (true)
+        //    {
+        //        string input = Console.ReadLine();
+        //        switch (input)
+        //        {
+        //            case "1":
+        //                Console.WriteLine("알파 스트라이크!");
+        //                _currentState = BattleState.PlayerTurn_SelectTarget; // 공격 대상 선택 상태로 변경
+
+        //                return this; // 다음 루프에서 HandlePlayerTargetSelection 호출
+
+        //            case "2":
+        //                Console.WriteLine("더블 스트라이크!");
+
+        //                return this;
+
+        //            default:
+        //                Console.WriteLine("잘못된 입력입니다.");
+        //                Console.Write(">> ");
+        //                break;
+        //        }
+
+        //    }
+        //}
+        private void UseSkill(Skills skill, Monster target)
+        {
+            _player.CurrentMana -= skill.MPCost;
+            // 데미지 계산 시 Skill 객체의 DamageMultiplier 사용
+            int damage = (int)Math.Round(_player.Attack * skill.DamageMultiplier);
+
+            Console.WriteLine();
+            // 스킬 이름, MP 소모량 등 Skill 객체 정보 사용
+            Console.WriteLine($"{_player.Name} 의 {skill.Name}! (MP {skill.MPCost} 소모)");
+            Console.WriteLine($"Lv.{target.Level} {target.Name} 을(를) 공격! [데미지 : {damage}]");
+            Console.WriteLine();
+            Console.WriteLine($"Lv.{target.Level} {target.Name}");
+            Console.Write($"HP {target.CurrentHealth} -> ");
+            target.TakeDamage(damage);
+            Console.WriteLine(target.IsDead ? "Dead" : $"{target.CurrentHealth}");
+        }
+
+        private void UseSkill(Skills skill)
+        {
+            _player.CurrentMana -= skill.MPCost;
+            int damage = (int)Math.Round(_player.Attack * skill.DamageMultiplier);
+            List<Monster> aliveMonsters = _monsters.Where(m => !m.IsDead).ToList();
+
+            Console.WriteLine();
+            Console.WriteLine($"{_player.Name} 의 {skill.Name}! (MP {skill.MPCost} 소모)");
+
+            if (skill.Type == SkillType.RandomTarget)
+            {
+                // 대상 수도 Skill 객체의 NumberOfTargets 사용
+                int targetCount = Math.Min(skill.NumberofTargets, aliveMonsters.Count);
+                if (targetCount == 0)
+                {
+                    Console.WriteLine("공격할 대상이 없습니다.");
+                    return;
+                }
+
+                List<Monster> targets = aliveMonsters.OrderBy(x => _random.Next()).Take(targetCount).ToList();
+                foreach (Monster t in targets)
+                {
+                    Console.WriteLine();
+                    Console.WriteLine($"Lv.{t.Level} {t.Name} 을(를) 공격! [데미지 : {damage}]");
+                    Console.WriteLine($"Lv.{t.Level} {t.Name}");
+                    Console.Write($"HP {t.CurrentHealth} -> ");
+                    t.TakeDamage(damage);
+                    Console.WriteLine(t.IsDead ? "Dead" : $"{t.CurrentHealth}");
+                }
+            }
+            // 다른 대상 지정 불필요 스킬 타입 추가 시 여기에 case 추가
+        }
+
+
+
 
         // --- 각 상태 처리 메서드 (아래에 이어서 구현) ---
         private IScene SelectAction()
@@ -184,6 +305,7 @@ namespace ConsoleApp8.Scenes
                 {
                     case "1":
                         _currentState = BattleState.PlayerTurn_SelectTarget; // 공격 대상 선택 상태로 변경
+                        _isSelectingSkillTarget = false; // 일반 공격 대상 선택 
                         return this; // 다음 루프에서 HandlePlayerTargetSelection 호출
 
                     case "2":
@@ -197,10 +319,15 @@ namespace ConsoleApp8.Scenes
                 }
             }
         }
-        private IScene SelectTarge()
+        private IScene SelectTarget()
         {
-            DisplayBattleStatus(true); // 몬스터 번호 표시
-            Console.WriteLine("0. 취소");
+            DisplayBattleStatus(true);
+            string purpose = _isSelectingSkillTarget ? $"[{_selectedSkill.Name}] 스킬 대상 선택" : "공격 대상 선택";
+            Console.WriteLine(purpose);
+            if (!_isSelectingSkillTarget)
+            {
+                Console.WriteLine("0. 취소");
+            }
             Console.WriteLine();
             Console.Write("대상을 선택해주세요.>> ");
 
@@ -209,20 +336,38 @@ namespace ConsoleApp8.Scenes
                 string input = Console.ReadLine();
                 if (int.TryParse(input, out int targetIndex))
                 {
-                    if (targetIndex == 0)
+                    if (!_isSelectingSkillTarget && targetIndex == 0)
                     {
-                        _currentState = BattleState.PlayerTurn_SelectAction; // 행동 선택으로 복귀
+                        _currentState = BattleState.PlayerTurn_SelectAction;
+                        _selectedSkill = null;
+                        _isSelectingSkillTarget = false;
                         return this;
                     }
-                    // 유효한 인덱스인지 확인 (1부터 시작하므로 -1)
+                    if (_isSelectingSkillTarget && targetIndex == 0)
+                    {
+                        Console.WriteLine("잘못된 입력입니다. 스킬 대상 선택 중에는 취소할 수 없습니다.");
+                        Console.Write(">> ");
+                        continue;
+                    }
+
                     if (targetIndex > 0 && targetIndex <= _monsters.Count)
                     {
                         Monster targetMonster = _monsters[targetIndex - 1];
                         if (!targetMonster.IsDead)
                         {
-                            // 몬스터 공격 및 결과 표시 상태로 전환
-                            PlayerAttack(targetMonster);
+                            if (_isSelectingSkillTarget)
+                            {
+                                // 스킬 대상 선택 완료 -> UseSkill 호출
+                                UseSkill(_selectedSkill, targetMonster);
+                            }
+                            else
+                            {
+                                // 일반 공격 대상 선택 완료 -> PlayerAttack 호출
+                                PlayerAttack(targetMonster);
+                            }
                             _currentState = BattleState.PlayerTurn_ShowResult;
+                            _selectedSkill = null; // 행동 후 선택된 스킬 초기화
+                            _isSelectingSkillTarget = false; // 플래그 초기화
                             return this;
                         }
                         else
@@ -242,6 +387,54 @@ namespace ConsoleApp8.Scenes
                 Console.Write(">> ");
             }
         }
+
+
+
+        //private IScene SelectTarge()
+        //{
+        //    DisplayBattleStatus(true); // 몬스터 번호 표시
+        //    Console.WriteLine("0. 취소");
+        //    Console.WriteLine();
+        //    Console.Write("대상을 선택해주세요.>> ");
+
+        //    while (true)
+        //    {
+        //        string input = Console.ReadLine();
+        //        if (int.TryParse(input, out int targetIndex))
+        //        {
+        //            if (targetIndex == 0)
+        //            {
+        //                _currentState = BattleState.PlayerTurn_SelectAction; // 행동 선택으로 복귀
+        //                return this;
+        //            }
+        //            // 유효한 인덱스인지 확인 (1부터 시작하므로 -1)
+        //            if (targetIndex > 0 && targetIndex <= _monsters.Count)
+        //            {
+        //                Monster targetMonster = _monsters[targetIndex - 1];
+        //                if (!targetMonster.IsDead)
+        //                {
+        //                    // 몬스터 공격 및 결과 표시 상태로 전환
+        //                    PlayerAttack(targetMonster);
+        //                    _currentState = BattleState.PlayerTurn_ShowResult;
+        //                    return this;
+        //                }
+        //                else
+        //                {
+        //                    Console.WriteLine("이미 죽은 몬스터입니다.");
+        //                }
+        //            }
+        //            else
+        //            {
+        //                Console.WriteLine("잘못된 입력입니다.");
+        //            }
+        //        }
+        //        else
+        //        {
+        //            Console.WriteLine("숫자를 입력해주세요.");
+        //        }
+        //        Console.Write(">> ");
+        //    }
+        //}
         private IScene HandlePlayerAttackResult()
         {
             // 공격 결과는 PlayerAttack 메서드에서 이미 출력됨
@@ -405,6 +598,7 @@ namespace ConsoleApp8.Scenes
 
             _lastAttackedMonster = target;
             _lastDamageDealt = finalDamage;
+
 
 
         }

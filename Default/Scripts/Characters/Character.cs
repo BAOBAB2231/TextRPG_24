@@ -38,6 +38,7 @@ namespace ConsoleApp8.Characters
             CurrentMana = MaxMana;
             Gold = 1500;
             SkillList = new List<Skills>();
+            GetSkill();
         }
 
         void GetSkill()
