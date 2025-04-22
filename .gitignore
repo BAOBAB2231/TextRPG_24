@@ -1,0 +1,37 @@
+# Visual Studio 관련
+.vs/
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+
+# 빌드 결과물
+bin/
+obj/
+Debug/
+Release/
+
+# 기타 캐시/로그
+*.log
+*.tlog
+*.cache
+*.dbmdl
+*.pdb
+
+# 임시 파일
+*.tmp
+*.temp
+*.bak
+
+# 자동 생성된 설정 파일
+*.vsp
+*.psess
+*.vspx
+*.ncb
+
+# Rider, VS Code 등 기타 툴 설정
+.idea/
+.vscode/
+
+# 환경 관련
+.env
