@@ -41,18 +41,37 @@ namespace ConsoleApp8.Characters
             GetSkill();
         }
 
+     
+
+
         void GetSkill()
         {
-            SkillList.Add(new Skills("알파 스트라이크", 5, "공격력 X 2 로 하나의 적을 공격합니다.", 2, SkillType.SingleTarget));
-            SkillList.Add(new Skills("더블 스트라이크", 15, "공격력 X 1.5 로 두명의 적을 공격합니다.", 1.5f, SkillType.RandomTarget, 1));
-            SkillList.Add(new Skills("명상", 10, "명상에 들어가서 회복합니다.", 1, SkillType.SelfTarget));
+            SkillList.Add(new Skills(
+                name:"알파 스트라이크",
+                mpCost: 5,
+                description: "공격력 X 2 로 하나의 적을 공격합니다.",
+                damageMultiplier: 2,
+                SkillType.SingleTarget)
+                );
+            SkillList.Add(new Skills(
+                name: "더블 스트라이크",
+                mpCost: 15,
+                description: "공격력 X 1.5 로 두명의 적을 공격합니다.",
+                damageMultiplier: 1.5f,
+                 SkillType.RandomTarget,
+                numberofTargets: 1));
+            SkillList.Add(new Skills(
+                name: "명상",
+                mpCost: 10, 
+                description: "명상에 들어가서 회복합니다.", 
+                damageMultiplier: 0, 
+                SkillType.SelfTarget));
+
+            }
 
 
-        }
 
-
-
-        // 캐릭터가 살아있는지 확인하는 메서드
+            // 캐릭터가 살아있는지 확인하는 메서드
         public bool IsAlive => CurrentHealth > 0;
 
         // 피격 처리 메서드
