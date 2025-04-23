@@ -49,21 +49,21 @@ namespace ConsoleApp8.Characters
             SkillList.Add(new Skills(
                 name:"알파 스트라이크",
                 mpCost: 5,
-                description: "공격력 X 2 로 하나의 적을 공격합니다.",
+                description: "공격력 X 2 로 하나의 적을 공격합니다.\n",
                 damageMultiplier: 2,
                 SkillType.SingleTarget)
                 );
             SkillList.Add(new Skills(
                 name: "더블 스트라이크",
                 mpCost: 15,
-                description: "공격력 X 1.5 로 두명의 적을 공격합니다.",
+                description: "공격력 X 1.5 로 두명의 적을 공격합니다.\n",
                 damageMultiplier: 1.5f,
                  SkillType.RandomTarget,
-                numberofTargets: 1));
+                numberofTargets: 2));
             SkillList.Add(new Skills(
                 name: "명상",
                 mpCost: 10, 
-                description: "명상에 들어가서 회복합니다.", 
+                description: "명상에 들어가서 회복합니다.\n", 
                 damageMultiplier: 0, 
                 SkillType.SelfTarget));
 

@@ -200,42 +200,8 @@ namespace ConsoleApp8.Scenes
             }
         }
 
-        //private IScene select skills()
-        //{
-        //    DisplayBattleStatus(); // 기본 전투 정보 표시
-        //    Console.WriteLine("1. 알파스 트라이크");
-        //    Console.WriteLine("2. 더블 스트라이크");
-        //    Console.WriteLine("3. 명상");
-
-        //    Console.WriteLine();
-        //    Console.Write("원하시는 행동을 입력해주세요.>> ");
-
-
-        //    while (true)
-        //    {
-        //        string input = Console.ReadLine();
-        //        switch (input)
-        //        {
-        //            case "1":
-        //                Console.WriteLine("알파 스트라이크!");
-        //                _currentState = BattleState.PlayerTurn_SelectTarget; // 공격 대상 선택 상태로 변경
-
-        //                return this; // 다음 루프에서 HandlePlayerTargetSelection 호출
-
-        //            case "2":
-        //                Console.WriteLine("더블 스트라이크!");
-
-        //                return this;
-
-        //            default:
-        //                Console.WriteLine("잘못된 입력입니다.");
-        //                Console.Write(">> ");
-        //                break;
-        //        }
-
-        //    }
-        //}
-        private void UseSkill(Skills skill, Monster target)
+        
+        private void UseSkill(Skills skill, Monster target) //몬스터 공격
         {
             _player.CurrentMana -= skill.MPCost;
             // 데미지 계산 시 Skill 객체의 DamageMultiplier 사용
@@ -252,7 +218,7 @@ namespace ConsoleApp8.Scenes
             Console.WriteLine(target.IsDead ? "Dead" : $"{target.CurrentHealth}");
         }
 
-        private void UseSkill(Skills skill)
+        private void UseSkill(Skills skill) //스킬 사용
         {
             _player.CurrentMana -= skill.MPCost;
             int damage = (int)Math.Round(_player.Attack * skill.DamageMultiplier);
@@ -389,52 +355,6 @@ namespace ConsoleApp8.Scenes
         }
 
 
-
-        //private IScene SelectTarge()
-        //{
-        //    DisplayBattleStatus(true); // 몬스터 번호 표시
-        //    Console.WriteLine("0. 취소");
-        //    Console.WriteLine();
-        //    Console.Write("대상을 선택해주세요.>> ");
-
-        //    while (true)
-        //    {
-        //        string input = Console.ReadLine();
-        //        if (int.TryParse(input, out int targetIndex))
-        //        {
-        //            if (targetIndex == 0)
-        //            {
-        //                _currentState = BattleState.PlayerTurn_SelectAction; // 행동 선택으로 복귀
-        //                return this;
-        //            }
-        //            // 유효한 인덱스인지 확인 (1부터 시작하므로 -1)
-        //            if (targetIndex > 0 && targetIndex <= _monsters.Count)
-        //            {
-        //                Monster targetMonster = _monsters[targetIndex - 1];
-        //                if (!targetMonster.IsDead)
-        //                {
-        //                    // 몬스터 공격 및 결과 표시 상태로 전환
-        //                    PlayerAttack(targetMonster);
-        //                    _currentState = BattleState.PlayerTurn_ShowResult;
-        //                    return this;
-        //                }
-        //                else
-        //                {
-        //                    Console.WriteLine("이미 죽은 몬스터입니다.");
-        //                }
-        //            }
-        //            else
-        //            {
-        //                Console.WriteLine("잘못된 입력입니다.");
-        //            }
-        //        }
-        //        else
-        //        {
-        //            Console.WriteLine("숫자를 입력해주세요.");
-        //        }
-        //        Console.Write(">> ");
-        //    }
-        //}
         private IScene HandlePlayerAttackResult()
         {
             // 공격 결과는 PlayerAttack 메서드에서 이미 출력됨
@@ -521,6 +441,10 @@ namespace ConsoleApp8.Scenes
                 Console.WriteLine();
                 int defeatedMonsters = _monsters.Count(m => m.IsDead); // 처치한 몬스터 수
                 Console.WriteLine($"던전에서 몬스터 {defeatedMonsters}마리를 잡았습니다.");
+               //Console.WriteLine("\n MP를 10 회복합니다 \n");
+                
+
+
             }
             else // BattleState.BattleOver_Lose
             {

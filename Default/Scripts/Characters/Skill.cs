@@ -21,9 +21,9 @@ namespace ConsoleApp8.Scripts.Characters
 
         public string Description { get; set; } //스킬 설명
 
-        public float DamageMultiplier { get; set; }
+        public float DamageMultiplier { get; set; } //데미지 배율
 
-        public int NumberofTargets { get; set; }
+        public int NumberofTargets { get; set; } //
 
         public SkillType Type { get; set; }
 
@@ -39,15 +39,6 @@ namespace ConsoleApp8.Scripts.Characters
 
             Type = type;
         }
-
-
-
-
-
-
-
-
-
 
     }
 }
