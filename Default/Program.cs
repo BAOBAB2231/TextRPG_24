@@ -1,37 +1,12 @@
 ﻿using System;
+using ConsoleApp8;
 
 namespace SpartaDungeon
 {
-    class Program
+    public class Program
     {
-        static Monster monster = new Monster();
-        // 플레이어 정보 클래스
-        class Player
-        {
-            public string Name { get; set; } = "Chad";
-            public string Job { get; set; } = "전사";
-            public int Level { get; set; } = 1;
-            public int Attack { get; set; } = 10;
-            public int Defense { get; set; } = 5;
-            public int Health { get; set; } = 100;
-            public int Gold { get; set; } = 1500;
-
-            public void ShowStatus()
-            {
-                Console.WriteLine("\n상태보기");
-                Console.WriteLine("캐릭터의 정보가 표시됩니다.\n");
-
-                Console.WriteLine($"Lv.{Level}");
-                Console.WriteLine($"{Name}({Job})");
-                Console.WriteLine($"공격력 : {Attack}");
-                Console.WriteLine($"방어력 : {Defense}");
-                Console.WriteLine($"체력 : {Health}");
-                Console.WriteLine($"Gold : {Gold}G\n");
-            }
-        }
-
-        static Player player = new Player();
-
+        public static Player player = new Player();
+        public static Battle battle = new Battle();
         static void Main(string[] args)
         {
             while (true)
@@ -52,7 +27,7 @@ namespace SpartaDungeon
                 }
                 else if (input == "2")
                 {
-                    StartBattle();
+                    battle.StartBattle();
                 }
                 else
                 {
@@ -79,62 +54,11 @@ namespace SpartaDungeon
                 else
                 {
                     Console.WriteLine("\n잘못된 입력입니다.\n");
+                    Pause();
                 }
             }
         }
 
-        static void StartBattle()
-        {
-            Console.Clear();
-            Console.WriteLine("\n[전투를 시작합니다!]");
-            Monster.ShowMonster();
-
-            while (true)
-            {
-                Console.WriteLine("0. 나가기");
-                Console.Write("원하시는 행동을 입력해주세요: ");
-                string input = Console.ReadLine().Trim();
-                if (input == "0")
-                {
-                    Monster.MonsterGroup.Clear();
-                    //모든 몬스터 정보 삭제하는 메서드 추가해야함.
-                    break;
-                }
-                else if (input == "1")
-                {
-                    Battle();
-                }
-                else
-                {
-                    Console.WriteLine("\n잘못된 입력입니다.\n");
-                }
-            }
-        }
-
-        static void Battle()
-        {
-            Console.Clear();
-            Console.WriteLine("\n[전투를 시작합니다!]");
-            Monster.Encounter();
-
-            while (true)
-            {
-                Console.WriteLine("0. 나가기");
-                Console.Write("원하시는 행동을 입력해주세요: ");
-                string input = Console.ReadLine().Trim();
-                //switch (input) {
-                //    case "0":
-                //        break;
-                //    case "1":
-                //    case "2":
-                //    case "3":
-                //    case "4":
-                //        if ()
-                //        { };
-                //        return;
-                //}
-            }
-        }
 
         static void Pause()
         {

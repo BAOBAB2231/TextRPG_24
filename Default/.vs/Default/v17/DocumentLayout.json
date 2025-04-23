@@ -3,11 +3,19 @@
   "WorkspaceRootPath": "C:\\Users\\USER\\Documents\\GitHub\\TextRPG_24\\Default\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{E3F2351C-F112-410F-94AB-4611D3A8EBC2}|Default.csproj|C:\\Users\\USER\\Documents\\GitHub\\TextRPG_24\\Default\\monsters.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{E3F2351C-F112-410F-94AB-4611D3A8EBC2}|Default.csproj|c:\\users\\user\\documents\\github\\textrpg_24\\default\\player.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E3F2351C-F112-410F-94AB-4611D3A8EBC2}|Default.csproj|solutionrelative:player.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E3F2351C-F112-410F-94AB-4611D3A8EBC2}|Default.csproj|c:\\users\\user\\documents\\github\\textrpg_24\\default\\battle.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E3F2351C-F112-410F-94AB-4611D3A8EBC2}|Default.csproj|solutionrelative:battle.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E3F2351C-F112-410F-94AB-4611D3A8EBC2}|Default.csproj|c:\\users\\user\\documents\\github\\textrpg_24\\default\\monsters.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{E3F2351C-F112-410F-94AB-4611D3A8EBC2}|Default.csproj|solutionrelative:monsters.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{E3F2351C-F112-410F-94AB-4611D3A8EBC2}|Default.csproj|c:\\users\\user\\documents\\github\\textrpg_24\\default\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{E3F2351C-F112-410F-94AB-4611D3A8EBC2}|Default.csproj|C:\\Users\\USER\\Documents\\GitHub\\TextRPG_24\\Default\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{E3F2351C-F112-410F-94AB-4611D3A8EBC2}|Default.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
@@ -31,25 +39,51 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
+              "Title": "Player.cs",
+              "DocumentMoniker": "C:\\Users\\USER\\Documents\\GitHub\\TextRPG_24\\Default\\Player.cs",
+              "RelativeDocumentMoniker": "Player.cs",
+              "ToolTip": "C:\\Users\\USER\\Documents\\GitHub\\TextRPG_24\\Default\\Player.cs",
+              "RelativeToolTip": "Player.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-23T08:51:57.534Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Battle.cs",
+              "DocumentMoniker": "C:\\Users\\USER\\Documents\\GitHub\\TextRPG_24\\Default\\Battle.cs",
+              "RelativeDocumentMoniker": "Battle.cs",
+              "ToolTip": "C:\\Users\\USER\\Documents\\GitHub\\TextRPG_24\\Default\\Battle.cs",
+              "RelativeToolTip": "Battle.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-23T08:51:43.315Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
               "Title": "Monsters.cs",
               "DocumentMoniker": "C:\\Users\\USER\\Documents\\GitHub\\TextRPG_24\\Default\\Monsters.cs",
               "RelativeDocumentMoniker": "Monsters.cs",
               "ToolTip": "C:\\Users\\USER\\Documents\\GitHub\\TextRPG_24\\Default\\Monsters.cs",
               "RelativeToolTip": "Monsters.cs",
-              "ViewState": "AgIAAC8AAAAAAAAAAAAIwHUAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAGQAAAAeAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-04-21T07:32:48.312Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 3,
               "Title": "Program.cs",
               "DocumentMoniker": "C:\\Users\\USER\\Documents\\GitHub\\TextRPG_24\\Default\\Program.cs",
               "RelativeDocumentMoniker": "Program.cs",
               "ToolTip": "C:\\Users\\USER\\Documents\\GitHub\\TextRPG_24\\Default\\Program.cs",
               "RelativeToolTip": "Program.cs",
-              "ViewState": "AgIAAD4AAAAAAAAAAAAuwH4AAAAgAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAMAAAAXAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-04-21T02:40:06.72Z",
               "EditorCaption": ""
