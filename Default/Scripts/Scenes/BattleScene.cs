@@ -172,6 +172,15 @@ namespace ConsoleApp8.Scenes
                                     _currentState = BattleState.PlayerTurn_ShowResult;
                                     _selectedSkill = null; // 사용 후 초기화
                                     return this;
+
+
+                                case SkillType.SelfTarget:    //명상 뭐시기 하는중@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+                                    UseSkill(_selectedSkill);
+                                    _currentState = BattleState.PlayerTurn_ShowResult;
+                                    _selectedSkill = null; // 사용 후 초기화
+                                    return this;
+                                    
+
                                 default:
                                     Console.WriteLine("아직 지원되지 않는 스킬 타입입니다.");
                                     _selectedSkill = null; // 지원 안되므로 초기화
@@ -221,35 +230,76 @@ namespace ConsoleApp8.Scenes
         private void UseSkill(Skills skill) //스킬 사용
         {
             _player.CurrentMana -= skill.MPCost;
-            int damage = (int)Math.Round(_player.Attack * skill.DamageMultiplier);
-            List<Monster> aliveMonsters = _monsters.Where(m => !m.IsDead).ToList();
 
             Console.WriteLine();
             Console.WriteLine($"{_player.Name} 의 {skill.Name}! (MP {skill.MPCost} 소모)");
 
-            if (skill.Type == SkillType.RandomTarget)
+            // 스킬 타입에 따른 분기 처리
+            switch (skill.Type)
             {
-                // 대상 수도 Skill 객체의 NumberOfTargets 사용
-                int targetCount = Math.Min(skill.NumberofTargets, aliveMonsters.Count);
-                if (targetCount == 0)
-                {
-                    Console.WriteLine("공격할 대상이 없습니다.");
-                    return;
-                }
+                case SkillType.RandomTarget:
+                    int damage = (int)Math.Round(_player.Attack * skill.DamageMultiplier);
+                    List<Monster> aliveMonsters = _monsters.Where(m => !m.IsDead).ToList();
+                    int targetCount = Math.Min(skill.NumberofTargets, aliveMonsters.Count);
+                    if (targetCount == 0)
+                    {
+                        Console.WriteLine("공격할 대상이 없습니다.");
+                        return;
+                    }
+                    List<Monster> targets = aliveMonsters.OrderBy(x => _random.Next()).Take(targetCount).ToList();
+                    foreach (Monster t in targets)
+                    {
+                        Console.WriteLine();
+                        Console.WriteLine($"Lv.{t.Level} {t.Name} 을(를) 공격! [데미지 : {damage}]");
+                        Console.WriteLine($"Lv.{t.Level} {t.Name}");
+                        Console.Write($"HP {t.CurrentHealth} -> ");
+                        t.TakeDamage(damage);
+                        Console.WriteLine(t.IsDead ? "Dead" : $"{t.CurrentHealth}");
+                    }
+                    break;
 
-                List<Monster> targets = aliveMonsters.OrderBy(x => _random.Next()).Take(targetCount).ToList();
-                foreach (Monster t in targets)
-                {
-                    Console.WriteLine();
-                    Console.WriteLine($"Lv.{t.Level} {t.Name} 을(를) 공격! [데미지 : {damage}]");
-                    Console.WriteLine($"Lv.{t.Level} {t.Name}");
-                    Console.Write($"HP {t.CurrentHealth} -> ");
-                    t.TakeDamage(damage);
-                    Console.WriteLine(t.IsDead ? "Dead" : $"{t.CurrentHealth}");
-                }
+                case SkillType.SelfTarget:
+                    // Heal 메서드 호출
+                    _player.Heal(skill.HealAmount);
+                    // Heal 메서드 내에서 관련 메시지 출력됨
+                    break;
+
+                // 다른 대상 지정 불필요 스킬 타입 추가 시 여기에 case 추가
+                default:
+                    Console.WriteLine("알 수 없는 스킬 타입입니다.");
+                    break;
             }
-            // 다른 대상 지정 불필요 스킬 타입 추가 시 여기에 case 추가
         }
+﻿
+
+            // 다른 대상 지정 불필요 스킬 타입 추가 시 여기에 case 추가
+
+            //if (skill.Type == SkillType.SelfTarget)  //명상 실패@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+            //{
+            //    // 대상 수도 Skill 객체의 NumberOfTargets 사용
+            //    int targetCount = Math.Min(skill.NumberofTargets, aliveMonsters.Count);
+            //    if (targetCount == 0)
+            //    {
+            //        Console.WriteLine("공격할 대상이 없습니다.");
+            //        return;
+            //    }
+
+            //    List<Monster> targets = aliveMonsters.OrderBy(x => _random.Next()).Take(targetCount).ToList();
+            //    foreach (Monster t in targets)
+            //    {
+            //        Console.WriteLine();
+            //        Console.WriteLine($"Lv.{t.Level} {t.Name} 을(를) 공격! [데미지 : {damage}]");
+            //        Console.WriteLine($"Lv.{t.Level} {t.Name}");
+            //        Console.Write($"HP {t.CurrentHealth} -> ");
+            //        t.TakeDamage(damage);
+            //        Console.WriteLine(t.IsDead ? "Dead" : $"{t.CurrentHealth}");
+            //    }
+            //}
+
+
+
+
+        
 
 
 
@@ -441,8 +491,10 @@ namespace ConsoleApp8.Scenes
                 Console.WriteLine();
                 int defeatedMonsters = _monsters.Count(m => m.IsDead); // 처치한 몬스터 수
                 Console.WriteLine($"던전에서 몬스터 {defeatedMonsters}마리를 잡았습니다.");
-               //Console.WriteLine("\n MP를 10 회복합니다 \n");
+               Console.WriteLine("\n MP를 10 회복합니다 \n");
                 
+
+
 
 
             }
@@ -455,6 +507,7 @@ namespace ConsoleApp8.Scenes
             Console.WriteLine($"Lv.{_player.Level:D2} {_player.Name}");
             // Console.WriteLine($"HP {initialHp} -> {_player.CurrentHealth}"); // 초기 체력 필요
             Console.WriteLine($"HP {_player.MaxHealth} -> {_player.CurrentHealth}"); // 임시로 MaxHealth 사용
+            Console.WriteLine($"MP {_player.MaxMana} -> {_player.CurrentMana}"); // 임시로 MaxHealth 사용
 
 
             Console.WriteLine();

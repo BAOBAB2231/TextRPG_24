@@ -62,22 +62,29 @@ namespace ConsoleApp8.Characters
                 numberofTargets: 2));
             SkillList.Add(new Skills(
                 name: "명상",
-                mpCost: 10, 
-                description: "명상에 들어가서 회복합니다.\n", 
-                damageMultiplier: 0, 
-                SkillType.SelfTarget));
+                mpCost: 10,
+                description: "명상에 들어가서 공격력X2 만큼 회복합니다.\n", //공격력 x2 수정예정
+                damageMultiplier: 0,
+                SkillType.SelfTarget,
+                numberofTargets: 0,
+                healAmount: Attack * 2
+                ));
 
-            }
 
 
 
-            // 캐릭터가 살아있는지 확인하는 메서드
+
+        }
+
+
+
+        // 캐릭터가 살아있는지 확인하는 메서드
         public bool IsAlive => CurrentHealth > 0;
 
         // 피격 처리 메서드
         public void TakeDamage(int damage)
         {
-            int finalDamage = Math.Max(0, damage - Defense); // 방어력 고려, 최소 데미지는 0
+            int finalDamage = Math.Max(0, damage - Defense); // 방어력 고려, 최소 데미지는 0  - Defense
             CurrentHealth -= finalDamage;
             if (CurrentHealth < 0)
             {
@@ -86,5 +93,29 @@ namespace ConsoleApp8.Characters
             Console.WriteLine($"{Name}이(가) {finalDamage}의 데미지를 받았습니다."); // 피격 로그 추가
             Console.WriteLine($"현재 체력: {CurrentHealth}/{MaxHealth}");
         }
+
+        public void Heal(int amount)
+        {
+            int actualHealAmount = amount; // 실제 회복될 양
+            if (CurrentHealth + amount > MaxHealth)
+            {
+                actualHealAmount = MaxHealth - CurrentHealth; // 최대 체력을 넘지 않도록 조정
+            }
+
+            if (actualHealAmount <= 0)
+            {
+                Console.WriteLine("이미 체력이 가득 차 있습니다.");
+                return; // 회복할 필요 없으면 종료
+            }
+
+            CurrentHealth += actualHealAmount;
+            Console.WriteLine($"{Name}의 체력을 {actualHealAmount} 만큼 회복했습니다.");
+            Console.WriteLine($"현재 체력: {CurrentHealth}/{MaxHealth}");
+        }
+
+
+
+
+
     }
 }

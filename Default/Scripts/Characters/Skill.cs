@@ -27,7 +27,9 @@ namespace ConsoleApp8.Scripts.Characters
 
         public SkillType Type { get; set; }
 
-        public Skills(string name, int mpCost, string description, float damageMultiplier, SkillType type, int numberofTargets = 1)
+        public int HealAmount { get; set; }
+
+        public Skills(string name, int mpCost, string description, float damageMultiplier, SkillType type, int numberofTargets = 1, int healAmount = 0)
         {
             Name = name;
             MPCost = mpCost;
@@ -38,6 +40,9 @@ namespace ConsoleApp8.Scripts.Characters
             NumberofTargets = numberofTargets;
 
             Type = type;
+
+            HealAmount = healAmount;
+
         }
 
     }
