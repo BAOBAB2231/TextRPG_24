@@ -491,9 +491,17 @@ namespace ConsoleApp8.Scenes
                 Console.WriteLine();
                 int defeatedMonsters = _monsters.Count(m => m.IsDead); // 처치한 몬스터 수
                 Console.WriteLine($"던전에서 몬스터 {defeatedMonsters}마리를 잡았습니다.");
-               Console.WriteLine("\n MP를 10 회복합니다 \n");
-                
+               
 
+                //전투 종료후 MP 회복 
+                int recoveredMana = 10;
+                _player.CurrentMana += recoveredMana;
+                if (_player.CurrentMana > _player.MaxMana)
+                {
+                    _player.CurrentMana = _player.MaxMana;
+                }
+
+                Console.WriteLine($"\nMP를 {recoveredMana} 회복합니다.\n");
 
 
 
