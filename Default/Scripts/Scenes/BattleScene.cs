@@ -515,7 +515,7 @@ namespace ConsoleApp8.Scenes
             Console.WriteLine($"Lv.{_player.Level:D2} {_player.Name}");
             // Console.WriteLine($"HP {initialHp} -> {_player.CurrentHealth}"); // 초기 체력 필요
             Console.WriteLine($"HP {_player.MaxHealth} -> {_player.CurrentHealth}"); // 임시로 MaxHealth 사용
-            Console.WriteLine($"MP {_player.MaxMana} -> {_player.CurrentMana}"); // 임시로 MaxHealth 사용
+            Console.WriteLine($"MP {_player.MaxMana} -> {_player.CurrentMana}"); // 임시로 MaxMana 사용
 
 
             Console.WriteLine();

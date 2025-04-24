@@ -21,7 +21,7 @@ namespace ConsoleApp8.Scenes
             Console.WriteLine("1. 시작하기");
             Console.WriteLine("2. 종료하기");
             Console.WriteLine();
-            Console.Write("원하는 작업을 선택하세요: ");
+            Console.Write("원하는 작업을 선택하세요>>  ");
 
             string input = Console.ReadLine();
 
