@@ -9,7 +9,16 @@ namespace ConsoleApp8
 {
     public class Battle
     {
-        Player player = Program.player;
+        Player player;
+        QuestUI quest;
+
+        public Battle(Player player, QuestUI quest)
+        {
+            this.player = player;
+            this.quest = quest;
+        }
+
+
         public void StartBattle()
         {
             Console.Clear();
@@ -89,6 +98,8 @@ namespace ConsoleApp8
                             {
                                 monster.MonsterHP = 0;
                                 monster.IsDead = true;
+                                if (monster.MonsterName == "미니언")
+                                quest.QuestMonster["미니언"]++;
                             }
                             BattleDamage(monster);
                             MonsterAttack();

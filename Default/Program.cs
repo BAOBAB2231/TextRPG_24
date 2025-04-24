@@ -5,8 +5,13 @@ namespace SpartaDungeon
 {
     public class Program
     {
+        public static ItemFactory item = new ItemFactory();
         public static Player player = new Player();
-        public static Battle battle = new Battle();
+
+        public static QuestBoard board = new QuestBoard(item, player);
+        public static QuestUI questUI = new QuestUI(board, item);
+        public static Battle battle = new Battle(player, questUI);
+
         static void Main(string[] args)
         {
             while (true)
@@ -16,7 +21,9 @@ namespace SpartaDungeon
                 Console.WriteLine("이제 전투를 시작할 수 있습니다.\n");
 
                 Console.WriteLine("1. 상태 보기");
-                Console.WriteLine("2. 전투 시작\n");
+                Console.WriteLine("2. 전투 시작");
+                Console.WriteLine("3. 퀘스트 보기\n");
+
                 Console.Write("원하시는 행동을 입력해 주세요: ");
 
                 string input = Console.ReadLine().Trim();
@@ -28,6 +35,10 @@ namespace SpartaDungeon
                 else if (input == "2")
                 {
                     battle.StartBattle();
+                }
+                else if (input == "3")
+                {
+                    questUI.QuestMenu();
                 }
                 else
                 {
