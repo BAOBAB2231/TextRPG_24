@@ -1,18 +1,34 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\qweqa\\Desktop\\\uAD50\uC721\uC6A9\\\uAE43\uD5C8\uBE0C \uD30C\uC77C\\TextRPG_24\\TextRPG_24_J\\",
+  "WorkspaceRootPath": "C:\\Users\\qweqa\\Desktop\\\uAD50\uC721\uC6A9\\\uAC1C\uC778\uC218\uC5C5\uC6A9\\TextRPG_24_J\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{64C9D59F-36B3-4EEC-B0B5-6F6AA7AD945A}|TextRPG_24_J\\TextRPG_24_J.csproj|c:\\users\\qweqa\\desktop\\\uAD50\uC721\uC6A9\\\uAE43\uD5C8\uBE0C \uD30C\uC77C\\textrpg_24\\textrpg_24_j\\textrpg_24_j\\battle.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{64C9D59F-36B3-4EEC-B0B5-6F6AA7AD945A}|TextRPG_24_J\\TextRPG_24_J.csproj|solutionrelative:textrpg_24_j\\battle.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{64C9D59F-36B3-4EEC-B0B5-6F6AA7AD945A}|TextRPG_24_J\\TextRPG_24_J.csproj|c:\\users\\qweqa\\desktop\\\uAD50\uC721\uC6A9\\\uAE43\uD5C8\uBE0C \uD30C\uC77C\\textrpg_24\\textrpg_24_j\\textrpg_24_j\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{64C9D59F-36B3-4EEC-B0B5-6F6AA7AD945A}|TextRPG_24_J\\TextRPG_24_J.csproj|c:\\users\\qweqa\\desktop\\\uAD50\uC721\uC6A9\\\uAC1C\uC778\uC218\uC5C5\uC6A9\\textrpg_24_j\\textrpg_24_j\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{64C9D59F-36B3-4EEC-B0B5-6F6AA7AD945A}|TextRPG_24_J\\TextRPG_24_J.csproj|solutionrelative:textrpg_24_j\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{64C9D59F-36B3-4EEC-B0B5-6F6AA7AD945A}|TextRPG_24_J\\TextRPG_24_J.csproj|c:\\users\\qweqa\\desktop\\\uAD50\uC721\uC6A9\\\uAE43\uD5C8\uBE0C \uD30C\uC77C\\textrpg_24\\textrpg_24_j\\textrpg_24_j\\player.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{64C9D59F-36B3-4EEC-B0B5-6F6AA7AD945A}|TextRPG_24_J\\TextRPG_24_J.csproj|c:\\users\\qweqa\\desktop\\\uAD50\uC721\uC6A9\\\uAC1C\uC778\uC218\uC5C5\uC6A9\\textrpg_24_j\\textrpg_24_j\\shopitem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{64C9D59F-36B3-4EEC-B0B5-6F6AA7AD945A}|TextRPG_24_J\\TextRPG_24_J.csproj|solutionrelative:textrpg_24_j\\shopitem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{64C9D59F-36B3-4EEC-B0B5-6F6AA7AD945A}|TextRPG_24_J\\TextRPG_24_J.csproj|c:\\users\\qweqa\\desktop\\\uAD50\uC721\uC6A9\\\uAC1C\uC778\uC218\uC5C5\uC6A9\\textrpg_24_j\\textrpg_24_j\\shop.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{64C9D59F-36B3-4EEC-B0B5-6F6AA7AD945A}|TextRPG_24_J\\TextRPG_24_J.csproj|solutionrelative:textrpg_24_j\\shop.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{64C9D59F-36B3-4EEC-B0B5-6F6AA7AD945A}|TextRPG_24_J\\TextRPG_24_J.csproj|c:\\users\\qweqa\\desktop\\\uAD50\uC721\uC6A9\\\uAC1C\uC778\uC218\uC5C5\uC6A9\\textrpg_24_j\\textrpg_24_j\\inventory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{64C9D59F-36B3-4EEC-B0B5-6F6AA7AD945A}|TextRPG_24_J\\TextRPG_24_J.csproj|solutionrelative:textrpg_24_j\\inventory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{64C9D59F-36B3-4EEC-B0B5-6F6AA7AD945A}|TextRPG_24_J\\TextRPG_24_J.csproj|c:\\users\\qweqa\\desktop\\\uAD50\uC721\uC6A9\\\uAC1C\uC778\uC218\uC5C5\uC6A9\\textrpg_24_j\\textrpg_24_j\\item.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{64C9D59F-36B3-4EEC-B0B5-6F6AA7AD945A}|TextRPG_24_J\\TextRPG_24_J.csproj|solutionrelative:textrpg_24_j\\item.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{64C9D59F-36B3-4EEC-B0B5-6F6AA7AD945A}|TextRPG_24_J\\TextRPG_24_J.csproj|c:\\users\\qweqa\\desktop\\\uAD50\uC721\uC6A9\\\uAC1C\uC778\uC218\uC5C5\uC6A9\\textrpg_24_j\\textrpg_24_j\\player.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{64C9D59F-36B3-4EEC-B0B5-6F6AA7AD945A}|TextRPG_24_J\\TextRPG_24_J.csproj|solutionrelative:textrpg_24_j\\player.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{64C9D59F-36B3-4EEC-B0B5-6F6AA7AD945A}|TextRPG_24_J\\TextRPG_24_J.csproj|c:\\users\\qweqa\\desktop\\\uAD50\uC721\uC6A9\\\uAC1C\uC778\uC218\uC5C5\uC6A9\\textrpg_24_j\\textrpg_24_j\\battle.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{64C9D59F-36B3-4EEC-B0B5-6F6AA7AD945A}|TextRPG_24_J\\TextRPG_24_J.csproj|solutionrelative:textrpg_24_j\\battle.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -22,43 +38,95 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 6,
           "Children": [
             {
               "$type": "Document",
               "DocumentIndex": 2,
-              "Title": "Player.cs",
-              "DocumentMoniker": "C:\\Users\\qweqa\\Desktop\\\uAD50\uC721\uC6A9\\\uAE43\uD5C8\uBE0C \uD30C\uC77C\\TextRPG_24\\TextRPG_24_J\\TextRPG_24_J\\Player.cs",
-              "RelativeDocumentMoniker": "TextRPG_24_J\\Player.cs",
-              "ToolTip": "C:\\Users\\qweqa\\Desktop\\\uAD50\uC721\uC6A9\\\uAE43\uD5C8\uBE0C \uD30C\uC77C\\TextRPG_24\\TextRPG_24_J\\TextRPG_24_J\\Player.cs",
-              "RelativeToolTip": "TextRPG_24_J\\Player.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABkAAAAxAAAAAAAAAA==",
+              "Title": "Shop.cs",
+              "DocumentMoniker": "C:\\Users\\qweqa\\Desktop\\\uAD50\uC721\uC6A9\\\uAC1C\uC778\uC218\uC5C5\uC6A9\\TextRPG_24_J\\TextRPG_24_J\\Shop.cs",
+              "RelativeDocumentMoniker": "TextRPG_24_J\\Shop.cs",
+              "ToolTip": "C:\\Users\\qweqa\\Desktop\\\uAD50\uC721\uC6A9\\\uAC1C\uC778\uC218\uC5C5\uC6A9\\TextRPG_24_J\\TextRPG_24_J\\Shop.cs",
+              "RelativeToolTip": "TextRPG_24_J\\Shop.cs",
+              "ViewState": "AgIAADYAAAAAAAAAAAAIwBkAAABMAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-22T01:41:40.537Z",
+              "WhenOpened": "2025-04-24T03:27:49.22Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 5,
+              "Title": "Player.cs",
+              "DocumentMoniker": "C:\\Users\\qweqa\\Desktop\\\uAD50\uC721\uC6A9\\\uAC1C\uC778\uC218\uC5C5\uC6A9\\TextRPG_24_J\\TextRPG_24_J\\Player.cs",
+              "RelativeDocumentMoniker": "TextRPG_24_J\\Player.cs",
+              "ToolTip": "C:\\Users\\qweqa\\Desktop\\\uAD50\uC721\uC6A9\\\uAC1C\uC778\uC218\uC5C5\uC6A9\\TextRPG_24_J\\TextRPG_24_J\\Player.cs",
+              "RelativeToolTip": "TextRPG_24_J\\Player.cs",
+              "ViewState": "AgIAAB8AAAAAAAAAAAAmwAQAAAALAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-23T11:08:30.791Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Inventory.cs",
+              "DocumentMoniker": "C:\\Users\\qweqa\\Desktop\\\uAD50\uC721\uC6A9\\\uAC1C\uC778\uC218\uC5C5\uC6A9\\TextRPG_24_J\\TextRPG_24_J\\Inventory.cs",
+              "RelativeDocumentMoniker": "TextRPG_24_J\\Inventory.cs",
+              "ToolTip": "C:\\Users\\qweqa\\Desktop\\\uAD50\uC721\uC6A9\\\uAC1C\uC778\uC218\uC5C5\uC6A9\\TextRPG_24_J\\TextRPG_24_J\\Inventory.cs",
+              "RelativeToolTip": "TextRPG_24_J\\Inventory.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-22T10:40:59.204Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Item.cs",
+              "DocumentMoniker": "C:\\Users\\qweqa\\Desktop\\\uAD50\uC721\uC6A9\\\uAC1C\uC778\uC218\uC5C5\uC6A9\\TextRPG_24_J\\TextRPG_24_J\\Item.cs",
+              "RelativeDocumentMoniker": "TextRPG_24_J\\Item.cs",
+              "ToolTip": "C:\\Users\\qweqa\\Desktop\\\uAD50\uC721\uC6A9\\\uAC1C\uC778\uC218\uC5C5\uC6A9\\TextRPG_24_J\\TextRPG_24_J\\Item.cs",
+              "RelativeToolTip": "TextRPG_24_J\\Item.cs",
+              "ViewState": "AgIAAAsAAAAAAAAAAADwvyoAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-22T10:40:54.45Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "ShopItem.cs",
+              "DocumentMoniker": "C:\\Users\\qweqa\\Desktop\\\uAD50\uC721\uC6A9\\\uAC1C\uC778\uC218\uC5C5\uC6A9\\TextRPG_24_J\\TextRPG_24_J\\ShopItem.cs",
+              "RelativeDocumentMoniker": "TextRPG_24_J\\ShopItem.cs",
+              "ToolTip": "C:\\Users\\qweqa\\Desktop\\\uAD50\uC721\uC6A9\\\uAC1C\uC778\uC218\uC5C5\uC6A9\\TextRPG_24_J\\TextRPG_24_J\\ShopItem.cs",
+              "RelativeToolTip": "TextRPG_24_J\\ShopItem.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAA1AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-22T10:40:34.059Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
               "Title": "Battle.cs",
-              "DocumentMoniker": "C:\\Users\\qweqa\\Desktop\\\uAD50\uC721\uC6A9\\\uAE43\uD5C8\uBE0C \uD30C\uC77C\\TextRPG_24\\TextRPG_24_J\\TextRPG_24_J\\Battle.cs",
+              "DocumentMoniker": "C:\\Users\\qweqa\\Desktop\\\uAD50\uC721\uC6A9\\\uAC1C\uC778\uC218\uC5C5\uC6A9\\TextRPG_24_J\\TextRPG_24_J\\Battle.cs",
               "RelativeDocumentMoniker": "TextRPG_24_J\\Battle.cs",
-              "ToolTip": "C:\\Users\\qweqa\\Desktop\\\uAD50\uC721\uC6A9\\\uAE43\uD5C8\uBE0C \uD30C\uC77C\\TextRPG_24\\TextRPG_24_J\\TextRPG_24_J\\Battle.cs",
+              "ToolTip": "C:\\Users\\qweqa\\Desktop\\\uAD50\uC721\uC6A9\\\uAC1C\uC778\uC218\uC5C5\uC6A9\\TextRPG_24_J\\TextRPG_24_J\\Battle.cs",
               "RelativeToolTip": "TextRPG_24_J\\Battle.cs",
-              "ViewState": "AgIAAC0AAAAAAAAAAAAiwEIAAAABAAAAAAAAAA==",
+              "ViewState": "AgIAAJgAAAAAAAAAAAAkwI8AAAAYAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-04-22T01:39:17.825Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 0,
               "Title": "Program.cs",
-              "DocumentMoniker": "C:\\Users\\qweqa\\Desktop\\\uAD50\uC721\uC6A9\\\uAE43\uD5C8\uBE0C \uD30C\uC77C\\TextRPG_24\\TextRPG_24_J\\TextRPG_24_J\\Program.cs",
+              "DocumentMoniker": "C:\\Users\\qweqa\\Desktop\\\uAD50\uC721\uC6A9\\\uAC1C\uC778\uC218\uC5C5\uC6A9\\TextRPG_24_J\\TextRPG_24_J\\Program.cs",
               "RelativeDocumentMoniker": "TextRPG_24_J\\Program.cs",
-              "ToolTip": "C:\\Users\\qweqa\\Desktop\\\uAD50\uC721\uC6A9\\\uAE43\uD5C8\uBE0C \uD30C\uC77C\\TextRPG_24\\TextRPG_24_J\\TextRPG_24_J\\Program.cs",
+              "ToolTip": "C:\\Users\\qweqa\\Desktop\\\uAD50\uC721\uC6A9\\\uAC1C\uC778\uC218\uC5C5\uC6A9\\TextRPG_24_J\\TextRPG_24_J\\Program.cs",
               "RelativeToolTip": "TextRPG_24_J\\Program.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAKAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAARAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-04-22T01:38:28.049Z",
               "EditorCaption": ""
