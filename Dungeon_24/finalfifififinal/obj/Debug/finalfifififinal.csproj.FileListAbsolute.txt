@@ -1,0 +1,7 @@
+C:\Users\qkgjd\source\repos\SpartaDungeon_AllInOne_Framework472\finalfifififinal\obj\Debug\finalfifififinal.csproj.AssemblyReference.cache
+C:\Users\qkgjd\source\repos\SpartaDungeon_AllInOne_Framework472\finalfifififinal\obj\Debug\finalfifififinal.csproj.CoreCompileInputs.cache
+C:\Users\qkgjd\source\repos\SpartaDungeon_AllInOne_Framework472\finalfifififinal\bin\Debug\finalfifififinal.exe.config
+C:\Users\qkgjd\source\repos\SpartaDungeon_AllInOne_Framework472\finalfifififinal\bin\Debug\finalfifififinal.exe
+C:\Users\qkgjd\source\repos\SpartaDungeon_AllInOne_Framework472\finalfifififinal\bin\Debug\finalfifififinal.pdb
+C:\Users\qkgjd\source\repos\SpartaDungeon_AllInOne_Framework472\finalfifififinal\obj\Debug\finalfifififinal.exe
+C:\Users\qkgjd\source\repos\SpartaDungeon_AllInOne_Framework472\finalfifififinal\obj\Debug\finalfifififinal.pdb

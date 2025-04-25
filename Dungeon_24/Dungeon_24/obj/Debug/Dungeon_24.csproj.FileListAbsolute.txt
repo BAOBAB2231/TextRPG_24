@@ -1,0 +1,7 @@
+C:\Users\qkgjd\source\repos\SpartaDungeon_AllInOne_Framework472\Dungeon_24\bin\Debug\Dungeon_24.exe.config
+C:\Users\qkgjd\source\repos\SpartaDungeon_AllInOne_Framework472\Dungeon_24\bin\Debug\Dungeon_24.exe
+C:\Users\qkgjd\source\repos\SpartaDungeon_AllInOne_Framework472\Dungeon_24\bin\Debug\Dungeon_24.pdb
+C:\Users\qkgjd\source\repos\SpartaDungeon_AllInOne_Framework472\Dungeon_24\obj\Debug\Dungeon_24.csproj.AssemblyReference.cache
+C:\Users\qkgjd\source\repos\SpartaDungeon_AllInOne_Framework472\Dungeon_24\obj\Debug\Dungeon_24.csproj.CoreCompileInputs.cache
+C:\Users\qkgjd\source\repos\SpartaDungeon_AllInOne_Framework472\Dungeon_24\obj\Debug\Dungeon_24.exe
+C:\Users\qkgjd\source\repos\SpartaDungeon_AllInOne_Framework472\Dungeon_24\obj\Debug\Dungeon_24.pdb
