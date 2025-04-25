@@ -10,7 +10,7 @@ using System.Xml.Linq;
 
 namespace TextRPG_24_J
 {
-    internal class LevelUp
+    public class LevelUp
     {
         int[] expToLevelUp = { 10, 35, 65, 100 };
         public void AddExp(Player player, List<Monster> monsters)

@@ -17,10 +17,10 @@ namespace TextRPG_24_J
             {
                 Monster monster = monsters[i];
                 goldToAdd += monster.Gold;
-                if (monster.Reworditem != null)
+                if (monster.Dropitem != null)
                 {
-                    Inventory.AddItem(monster.Reworditem);
-                    Console.WriteLine($"{monster.Reworditem.Name}");
+                    Inventory.AddItem(monster.Dropitem);
+                    Console.WriteLine($"{monster.Dropitem.Name}");
                 }
             }
             player.Gold += goldToAdd;

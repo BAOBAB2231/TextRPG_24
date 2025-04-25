@@ -11,9 +11,10 @@
         public int Attack { get; set; }
         public int Exp { get; set; }
         public int Gold { get; set; }
+        public Item Dropitem { get; set; }
         public bool IsDead => Hp <= 0;
 
-        public Monster(string name, int level, int hp, int atk,int exp, int gold)
+        public Monster(string name, int level, int hp, int atk,int exp, int gold, Item dropitmem)
         {
             Name = name;
             Level = level;
@@ -22,6 +23,7 @@
             Attack = atk;
             Exp = exp;
             Gold = gold;
+            Dropitem = dropitmem;
         }
     }
 
@@ -44,13 +46,13 @@
                 switch (type)
                 {
                     case 0:
-                        monsters.Add(new Monster("미니언", 2, 15, 5, 1, 50));
+                        monsters.Add(new Monster("미니언", 2, 15, 5, 1, 50, Shop.shopItems[2]));
                         break;
                     case 1:
-                        monsters.Add(new Monster("공허충", 3, 10, 9, 2, 100));
+                        monsters.Add(new Monster("공허충", 3, 10, 9, 2, 100, Shop.shopItems[5]));
                         break;
                     case 2:
-                        monsters.Add(new Monster("대포미니언", 5, 25, 8,4, 200));
+                        monsters.Add(new Monster("대포미니언", 5, 25, 8,4, 200, Shop.shopItems[0]));
                         break;
                 }
             }
@@ -128,7 +130,11 @@
                         Console.WriteLine("Battle!! - Result\n");
                         Console.WriteLine("Victory\n");
                         Console.WriteLine($"던전에서 몬스터 {monsters.Count}마리를 잡았습니다.\n");
-                        Console.WriteLine($"Lv.{player.Level} {player.Name}\nHP 100 -> {player.HP}\n");
+                        LevelUp levelUp = new LevelUp();
+                        levelUp.AddExp(player, monsters);
+;                        Console.WriteLine($"Lv.{player.Level} {player.Name}\nHP 100 -> {player.HP}\n");
+                        DropItem dropItem = new DropItem();
+                        dropItem.Reward(player, monsters);
                         Console.WriteLine("0. 다음\n>> ");
                         Console.ReadLine();
                         return;

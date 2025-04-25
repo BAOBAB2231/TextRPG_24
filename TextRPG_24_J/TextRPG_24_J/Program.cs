@@ -55,7 +55,7 @@ namespace TextRPG_24_J
         }
         static void CreatePlayer()
         {
-            player = new Player("Chad", "전사", 1, 10, 5, 100, 5000);
+            player = new Player("Chad", "전사", 1, 0, 0, 10, 5, 100, 5000);
             /*
             Name 
             Job 
