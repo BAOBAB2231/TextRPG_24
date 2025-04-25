@@ -3,20 +3,8 @@
   "WorkspaceRootPath": "C:\\Users\\USER\\Documents\\GitHub\\TextRPG_24\\Default\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{E3F2351C-F112-410F-94AB-4611D3A8EBC2}|Default.csproj|c:\\users\\user\\documents\\github\\textrpg_24\\default\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E3F2351C-F112-410F-94AB-4611D3A8EBC2}|Default.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{E3F2351C-F112-410F-94AB-4611D3A8EBC2}|Default.csproj|C:\\Users\\USER\\Documents\\GitHub\\TextRPG_24\\Default\\quest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{E3F2351C-F112-410F-94AB-4611D3A8EBC2}|Default.csproj|c:\\users\\user\\documents\\github\\textrpg_24\\default\\quest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{E3F2351C-F112-410F-94AB-4611D3A8EBC2}|Default.csproj|solutionrelative:quest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{E3F2351C-F112-410F-94AB-4611D3A8EBC2}|Default.csproj|C:\\Users\\USER\\Documents\\GitHub\\TextRPG_24\\Default\\player.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E3F2351C-F112-410F-94AB-4611D3A8EBC2}|Default.csproj|solutionrelative:player.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{E3F2351C-F112-410F-94AB-4611D3A8EBC2}|Default.csproj|c:\\users\\user\\documents\\github\\textrpg_24\\default\\item.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E3F2351C-F112-410F-94AB-4611D3A8EBC2}|Default.csproj|solutionrelative:item.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{E3F2351C-F112-410F-94AB-4611D3A8EBC2}|Default.csproj|C:\\Users\\USER\\Documents\\GitHub\\TextRPG_24\\Default\\battle.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -25,6 +13,18 @@
     {
       "AbsoluteMoniker": "D:0:0:{E3F2351C-F112-410F-94AB-4611D3A8EBC2}|Default.csproj|C:\\Users\\USER\\Documents\\GitHub\\TextRPG_24\\Default\\monsters.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{E3F2351C-F112-410F-94AB-4611D3A8EBC2}|Default.csproj|solutionrelative:monsters.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E3F2351C-F112-410F-94AB-4611D3A8EBC2}|Default.csproj|C:\\Users\\USER\\Documents\\GitHub\\TextRPG_24\\Default\\player.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E3F2351C-F112-410F-94AB-4611D3A8EBC2}|Default.csproj|solutionrelative:player.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E3F2351C-F112-410F-94AB-4611D3A8EBC2}|Default.csproj|C:\\Users\\USER\\Documents\\GitHub\\TextRPG_24\\Default\\item.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E3F2351C-F112-410F-94AB-4611D3A8EBC2}|Default.csproj|solutionrelative:item.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E3F2351C-F112-410F-94AB-4611D3A8EBC2}|Default.csproj|C:\\Users\\USER\\Documents\\GitHub\\TextRPG_24\\Default\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E3F2351C-F112-410F-94AB-4611D3A8EBC2}|Default.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -34,7 +34,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 7,
+          "SelectedChildIndex": 3,
           "Children": [
             {
               "$type": "Bookmark",
@@ -46,7 +46,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 4,
               "Title": "Item.cs",
               "DocumentMoniker": "C:\\Users\\USER\\Documents\\GitHub\\TextRPG_24\\Default\\Item.cs",
               "RelativeDocumentMoniker": "Item.cs",
@@ -54,73 +54,68 @@
               "RelativeToolTip": "Item.cs",
               "ViewState": "AgIAADIAAAAAAAAAAAAqwFQAAAAgAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-24T10:17:53.984Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-04-24T10:17:53.984Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 0,
               "Title": "Quest.cs",
               "DocumentMoniker": "C:\\Users\\USER\\Documents\\GitHub\\TextRPG_24\\Default\\Quest.cs",
               "RelativeDocumentMoniker": "Quest.cs",
               "ToolTip": "C:\\Users\\USER\\Documents\\GitHub\\TextRPG_24\\Default\\Quest.cs",
               "RelativeToolTip": "Quest.cs",
-              "ViewState": "AgIAABEAAAAAAAAAAAA2wD0AAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAPcAAAAAAAAAAAAAwAsAAAAEAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-04-24T01:06:12.58Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 1,
               "Title": "Battle.cs",
               "DocumentMoniker": "C:\\Users\\USER\\Documents\\GitHub\\TextRPG_24\\Default\\Battle.cs",
               "RelativeDocumentMoniker": "Battle.cs",
               "ToolTip": "C:\\Users\\USER\\Documents\\GitHub\\TextRPG_24\\Default\\Battle.cs",
               "RelativeToolTip": "Battle.cs",
-              "ViewState": "AgIAADkAAAAAAAAAAAAIwFsAAAAzAAAAAAAAAA==",
+              "ViewState": "AgIAAEoAAAAAAAAAAAAQwGUAAAA5AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-23T08:51:43.315Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-04-23T08:51:43.315Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 2,
               "Title": "Monsters.cs",
               "DocumentMoniker": "C:\\Users\\USER\\Documents\\GitHub\\TextRPG_24\\Default\\Monsters.cs",
               "RelativeDocumentMoniker": "Monsters.cs",
               "ToolTip": "C:\\Users\\USER\\Documents\\GitHub\\TextRPG_24\\Default\\Monsters.cs",
               "RelativeToolTip": "Monsters.cs",
-              "ViewState": "AgIAABQAAAAAAAAAAAAgwGsAAAANAAAAAAAAAA==",
+              "ViewState": "AgIAAD0AAAAAAAAAAAAmwBMAAAAqAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-21T07:32:48.312Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-04-21T07:32:48.312Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 3,
               "Title": "Player.cs",
               "DocumentMoniker": "C:\\Users\\USER\\Documents\\GitHub\\TextRPG_24\\Default\\Player.cs",
               "RelativeDocumentMoniker": "Player.cs",
               "ToolTip": "C:\\Users\\USER\\Documents\\GitHub\\TextRPG_24\\Default\\Player.cs",
               "RelativeToolTip": "Player.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAASAAAAAAAAAA==",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAAAgAAAASAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-23T08:51:57.534Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-04-23T08:51:57.534Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 5,
               "Title": "Program.cs",
               "DocumentMoniker": "C:\\Users\\USER\\Documents\\GitHub\\TextRPG_24\\Default\\Program.cs",
               "RelativeDocumentMoniker": "Program.cs",
               "ToolTip": "C:\\Users\\USER\\Documents\\GitHub\\TextRPG_24\\Default\\Program.cs",
               "RelativeToolTip": "Program.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAA7AAAAAAAAAA==",
+              "ViewState": "AgIAAA4AAAAAAAAAAADwvxAAAAAYAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-21T02:40:06.72Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-04-21T02:40:06.72Z"
             }
           ]
         }
