@@ -1,4 +1,6 @@
-﻿namespace TextRPG_24_J
+﻿using System.Threading;
+
+namespace TextRPG_24_J
 {
 
 
@@ -25,6 +27,7 @@
     {
         static List<Monster> monsters = new();
         static Random random = new();
+        static QuestUI quest;
 
         public static void Show(Player player)
         {
@@ -62,6 +65,10 @@
                     Monster m = monsters[i];
                     if (m.IsDead)
                     {
+                        if (m.Name == "미니언")
+                        {
+                            quest.QuestMonster["미니언"]++;
+                        }
                         Console.ForegroundColor = ConsoleColor.DarkGray;
                         Console.WriteLine($"{i + 1} Lv.{m.Level} {m.Name}  Dead");
                         Console.ResetColor();
