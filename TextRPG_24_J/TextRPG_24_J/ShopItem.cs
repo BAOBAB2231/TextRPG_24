@@ -2,7 +2,7 @@
 
 namespace TextRPG_24_J
 {
-    class ShopItem : Item
+    public class ShopItem : Item
     {
         public int Price { get; }
 
