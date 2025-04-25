@@ -34,7 +34,6 @@ namespace TextRPG_24_J
             AddQuest();
         }
 
-        Quest quest = new Quest();
         public List<Quest> QuestList = new List<Quest>();
 
         private void AddQuest()
@@ -232,7 +231,6 @@ namespace TextRPG_24_J
                     {
                         QuestMonster.Remove("미니언");
                         QuestMonster.Add("미니언", 0);
-
                     }
                     break;
                 }

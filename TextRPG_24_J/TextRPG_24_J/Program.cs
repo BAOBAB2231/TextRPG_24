@@ -5,13 +5,13 @@ namespace TextRPG_24_J
 
     class Program
     {
-        static Player player;
-
+        static Player player = new Player("Chad", "전사", 1, 100, 5, 100, 5000);
+        static QuestBoard board = new QuestBoard(player, Shop.shopItems);
+        static QuestUI quest = new QuestUI(board);
         static void Main(string[] args)
         {
-            CreatePlayer();
-            QuestBoard board = new QuestBoard(player, Shop.shopItems);
-            QuestUI quest = new QuestUI(board);
+            //CreatePlayer();
+            Battle.SetQuestClass(board, quest);
 
             while (true)
             {
@@ -55,7 +55,7 @@ namespace TextRPG_24_J
         }
         static void CreatePlayer()
         {
-            player = new Player("Chad", "전사", 1, 10, 5, 100, 5000);
+            player = new Player("Chad", "전사", 1, 100, 5, 100, 5000);
             /*
             Name 
             Job 

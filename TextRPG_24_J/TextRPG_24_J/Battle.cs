@@ -27,7 +27,14 @@ namespace TextRPG_24_J
     {
         static List<Monster> monsters = new();
         static Random random = new();
-        static QuestUI quest;
+        static QuestBoard? board;
+        static QuestUI? quest;
+
+        public static void SetQuestClass(QuestBoard _board, QuestUI _quest)
+        {
+            board = _board;
+            quest = _quest;
+        }
 
         public static void Show(Player player)
         {
@@ -65,10 +72,6 @@ namespace TextRPG_24_J
                     Monster m = monsters[i];
                     if (m.IsDead)
                     {
-                        if (m.Name == "미니언")
-                        {
-                            quest.QuestMonster["미니언"]++;
-                        }
                         Console.ForegroundColor = ConsoleColor.DarkGray;
                         Console.WriteLine($"{i + 1} Lv.{m.Level} {m.Name}  Dead");
                         Console.ResetColor();
@@ -120,7 +123,15 @@ namespace TextRPG_24_J
                     int variation = (int)Math.Ceiling(player.Attack * 0.1);
                     int finalDamage = random.Next(player.Attack - variation, player.Attack + variation + 1);
                     target.Hp -= finalDamage;
-                    if (target.Hp < 0) target.Hp = 0;
+                    if (target.Hp < 0)
+                    {
+                        if (target.Name == "미니언" && board?.QuestList[0].IsQuestAccept == true)
+                        {
+                            if (quest != null)
+                            quest.QuestMonster["미니언"]++;
+                        }
+                        target.Hp = 0;
+                    }
                     Console.WriteLine($"{target.Name}을(를) 공격했습니다! [데미지 : {finalDamage}]");
                     Thread.Sleep(1000);
 
