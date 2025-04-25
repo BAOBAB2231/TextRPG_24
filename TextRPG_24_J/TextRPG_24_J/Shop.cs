@@ -8,7 +8,7 @@ namespace TextRPG_24_J
 {
     public static class Shop
     {
-        static List<ShopItem> shopItems = new List<ShopItem>();
+        public static List<ShopItem> shopItems = new List<ShopItem>();
 
         static Shop()
         {
