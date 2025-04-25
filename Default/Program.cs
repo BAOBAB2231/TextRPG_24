@@ -1,35 +1,16 @@
 ﻿using System;
+using ConsoleApp8;
 
 namespace SpartaDungeon
 {
-    class Program
+    public class Program
     {
-        // 플레이어 정보 클래스
-        class Player
-        {
-            public string Name { get; set; } = "Chad";
-            public string Job { get; set; } = "전사";
-            public int Level { get; set; } = 1;
-            public int Attack { get; set; } = 10;
-            public int Defense { get; set; } = 5;
-            public int Health { get; set; } = 100;
-            public int Gold { get; set; } = 1500;
+        public static ItemFactory item = new ItemFactory();
+        public static Player player = new Player();
 
-            public void ShowStatus()
-            {
-                Console.WriteLine("\n상태보기");
-                Console.WriteLine("캐릭터의 정보가 표시됩니다.\n");
-
-                Console.WriteLine($"Lv.{Level}");
-                Console.WriteLine($"{Name}({Job})");
-                Console.WriteLine($"공격력 : {Attack}");
-                Console.WriteLine($"방어력 : {Defense}");
-                Console.WriteLine($"체력 : {Health}");
-                Console.WriteLine($"Gold : {Gold}G\n");
-            }
-        }
-
-        static Player player = new Player();
+        public static QuestBoard board = new QuestBoard(item, player);
+        public static QuestUI questUI = new QuestUI(board, item);
+        public static Battle battle = new Battle(player, questUI, board);
 
         static void Main(string[] args)
         {
@@ -40,7 +21,9 @@ namespace SpartaDungeon
                 Console.WriteLine("이제 전투를 시작할 수 있습니다.\n");
 
                 Console.WriteLine("1. 상태 보기");
-                Console.WriteLine("2. 전투 시작\n");
+                Console.WriteLine("2. 전투 시작");
+                Console.WriteLine("3. 퀘스트 보기\n");
+
                 Console.Write("원하시는 행동을 입력해 주세요: ");
 
                 string input = Console.ReadLine().Trim();
@@ -51,7 +34,11 @@ namespace SpartaDungeon
                 }
                 else if (input == "2")
                 {
-                    StartBattle();
+                    battle.StartBattle();
+                }
+                else if (input == "3")
+                {
+                    questUI.QuestMenu();
                 }
                 else
                 {
@@ -78,15 +65,11 @@ namespace SpartaDungeon
                 else
                 {
                     Console.WriteLine("\n잘못된 입력입니다.\n");
+                    Pause();
                 }
             }
         }
 
-        static void StartBattle()
-        {
-            Console.WriteLine("\n[전투를 시작합니다!]");
-            Pause();
-        }
 
         static void Pause()
         {
