@@ -11,11 +11,13 @@ namespace ConsoleApp8
     {
         Player player;
         QuestUI quest;
+        QuestBoard board;
 
-        public Battle(Player player, QuestUI quest)
+        public Battle(Player player, QuestUI quest, QuestBoard questBoard)
         {
             this.player = player;
             this.quest = quest;
+            this.board = questBoard;
         }
 
 
@@ -100,6 +102,7 @@ namespace ConsoleApp8
                                 monster.IsDead = true;
                                 if (monster.MonsterName == "미니언")
                                 quest.QuestMonster["미니언"]++;
+                                //board.QuestList[0].QuestState = quest.QuestMonster["미니언"];
                             }
                             BattleDamage(monster);
                             MonsterAttack();

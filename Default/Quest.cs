@@ -164,6 +164,8 @@ namespace ConsoleApp8
 
             while (quest.IsQuestAccept == true)
             {
+                board.QuestList[0].QuestState = QuestMonster["미니언"];
+
                 Console.Clear();
                 Console.WriteLine("\nQuest!!\n");
                 Console.WriteLine(quest.QuestTitle);
@@ -175,8 +177,7 @@ namespace ConsoleApp8
                     Console.WriteLine($"{quest.QuestReward[i].ItemName}");
                 }
                 Console.WriteLine(quest.Gold + "G\n");
-                Console.WriteLine("1. 보상 받기");
-                Console.WriteLine("2. 퀘스트 포기\n");
+                QuestStatus(intInput);
                 Console.WriteLine("0. 나가기");
                 Console.WriteLine("원하시는 행동을 입력해주세요.");
                 Console.Write(">>");
@@ -185,12 +186,14 @@ namespace ConsoleApp8
 
                 if (input == "1")
                 {
-                    
+                    for ( int i = 0; i < board.QuestList.Count; i++)
+                    { board.QuestList[i].QuestState = 0; }
+                    quest.IsQuestAccept = false;
                     break;
                 }
                 else if (input == "2")
                 {
-                    quest.IsQuestAccept = false;
+
                     break;
                 }
                 else if (input == "0")
@@ -230,7 +233,8 @@ namespace ConsoleApp8
                     if (quest == board.QuestList[0])
                     {
                         QuestMonster.Remove("미니언");
-                        QuestMonster.Add("미니언", 0); 
+                        QuestMonster.Add("미니언", 0);
+
                     }
                     break;
                 }
@@ -246,26 +250,21 @@ namespace ConsoleApp8
             }
         }
 
-        void IsQuestDone(int intInput)
+        void QuestStatus(int intInput)
         {
-            Quest thisQuest = board.QuestList[intInput];
-            if (thisQuest.IsDone == false)
+
+            Quest quest = board.QuestList[intInput];
+            if (quest.IsDone == false)
             {
-                Console.WriteLine("잘못된 입력입니다. 다시 입력해주세요.");
-                Pause();
+                Console.WriteLine("1. 퀘스트 포기\n");
             }
             else
             {
-                //보상어케주냐 ㅡㅡ;;
+                Console.WriteLine("1. 퀘스트 포기");
+                Console.WriteLine("2. 보상 받기\n");
             }
-            //if (thisQuest == board.QuestList[0])
-            //{
-            //    if (QuestMonster["미니언"] == quest.QuestComplete)
-            //    {
-            //        quest.IsDone = true;
-            //    }
-            //}
         }
+
 
 
         void Pause()

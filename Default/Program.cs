@@ -10,7 +10,7 @@ namespace SpartaDungeon
 
         public static QuestBoard board = new QuestBoard(item, player);
         public static QuestUI questUI = new QuestUI(board, item);
-        public static Battle battle = new Battle(player, questUI);
+        public static Battle battle = new Battle(player, questUI, board);
 
         static void Main(string[] args)
         {
