@@ -1,6 +1,4 @@
-﻿
-
-namespace TextRPG_24_J
+﻿namespace TextRPG_24_J
 {
     public class Player
     {
@@ -64,7 +62,7 @@ namespace TextRPG_24_J
             }
         }
 
-        public Player(string name, string job, int level, int attack, int defense, int hp, int gold )
+        public Player(string name, string job, int level, int attack, int defense, int hp, int gold)
         {
             Name = name;
             Job = job;
@@ -81,32 +79,8 @@ namespace TextRPG_24_J
 
         void GetSkill()
         {
-            SkillList.Add(new Skills(
-                name: "알파 스트라이크",
-                mpCost: 5,
-                description: "공격력 X 2 로 하나의 적을 공격합니다.\n",
-                damageMultiplier: 2,
-                SkillType.SingleTarget)
-                );
-            SkillList.Add(new Skills(
-                name: "더블 스트라이크",
-                mpCost: 15,
-                description: "공격력 X 1.5 로 두명의 적을 공격합니다.\n",
-                damageMultiplier: 1.5f,
-                 SkillType.RandomTarget,
-                numberofTargets: 2));
-            SkillList.Add(new Skills(
-                name: "명상",
-                mpCost: 10,
-                description: "명상에 들어가서 공격력X2 만큼 회복합니다.\n", 
-                damageMultiplier: 0,
-                SkillType.SelfTarget,
-                numberofTargets: 0,
-                healAmount: Attack * 2
-                ));
-
+            SkillList = Skills.GetSkill(Attack);
         }
-
 
         public void ShowStatus()
         {
@@ -119,7 +93,7 @@ namespace TextRPG_24_J
             Console.WriteLine($"체  력 : {HP}");
             Console.WriteLine($"마  나 : {CurrentMana}");
             Console.WriteLine($"Gold : {Gold} G\n");
-            
+
         }
 
     }
