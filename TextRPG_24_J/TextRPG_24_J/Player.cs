@@ -7,6 +7,9 @@
         public int Level { get; set; }
         public int BaseAttack { get; set; }
         public int BaseDefense { get; set; }
+        public float CritRate { get; set; } // 치명타 확률
+        public float CritMultiplier { get; set; } // 치명타 배율
+        public float Evasion { get; set; } // 회피 확률
         public int HP { get; set; }
         public int MaxMana { get; set; }  // 최대 마나
 

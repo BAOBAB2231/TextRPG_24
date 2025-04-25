@@ -9,6 +9,9 @@
         public int MaxHp { get; set; }
         public int Hp { get; set; }
         public int Attack { get; set; }
+        public float CritRate { get; set; } // 치명타 확률
+        public float CritMultiplier { get; set; } // 치명타 배율
+        public float Evasion { get; set; } // 회피 확률
         public bool IsDead => Hp <= 0;
 
         public Monster(string name, int level, int hp, int atk)
