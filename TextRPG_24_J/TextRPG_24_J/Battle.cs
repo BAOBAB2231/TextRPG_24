@@ -39,7 +39,7 @@ namespace TextRPG_24_J
         public static void Show(Player player)
         {
             Console.Clear();
-            Console.WriteLine("Battle!!");
+            Console.WriteLine("Battle!!");   //배틀시작문구
 
             monsters.Clear();
             totalGold = 0;
