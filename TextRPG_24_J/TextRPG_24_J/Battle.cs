@@ -18,7 +18,7 @@ namespace TextRPG_24_J
             Name = name;
             Level = level;
             MaxHp = hp;
-            Hp = hp;
+            Hp = hp;            
             Attack = atk;
         }
     }
@@ -79,6 +79,7 @@ namespace TextRPG_24_J
                 Console.WriteLine($"HP {player.HP}/100\n");
 
                 Console.WriteLine("1. 공격");
+                Console.WriteLine("1. 스킬");
                 Console.Write("\n원하시는 행동을 입력해주세요.\n>> ");
                 string input = Console.ReadLine();
 
