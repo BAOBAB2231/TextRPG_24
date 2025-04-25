@@ -1,6 +1,4 @@
-﻿
-
-namespace TextRPG_24_J
+﻿namespace TextRPG_24_J
 {
 
 
@@ -80,9 +78,10 @@ namespace TextRPG_24_J
 
                 Console.WriteLine("\n[내정보]");
                 Console.WriteLine($"Lv.{player.Level} {player.Name} ({player.Job})");
-                Console.WriteLine($"HP {player.HP}/100\n");
-
+                Console.WriteLine($"HP {player.HP}/100");
+                Console.WriteLine($"MP {player.CurrentMana}/50\n");
                 Console.WriteLine("1. 공격");
+                Console.WriteLine("2. 스킬");
                 Console.Write("\n원하시는 행동을 입력해주세요.\n>> ");
                 string input = Console.ReadLine();
 
@@ -145,11 +144,11 @@ namespace TextRPG_24_J
                         Console.WriteLine("Battle!!\n");
                         Console.WriteLine($"{m.Name}의 공격!\n{player.Name}을(를) 맞췄습니다.");
 
-                        
+
                         int monVar = (int)Math.Ceiling(m.Attack * 0.1);
                         int rawDmg = random.Next(m.Attack - monVar, m.Attack + monVar + 1);
 
-                        
+
                         int actualDmg = rawDmg - player.Defense;
                         if (actualDmg < 0) actualDmg = 0;
 
@@ -157,7 +156,94 @@ namespace TextRPG_24_J
                         player.HP -= actualDmg;
                         if (player.HP < 0) player.HP = 0;
 
-                        
+
+                        Console.WriteLine($"[데미지 : {actualDmg}] (원래 공격력: {rawDmg}, 방어력: {player.Defense})\n");
+                        Console.WriteLine($"Lv.{player.Level} {player.Name}\nHP {prevHp} -> {player.HP}\n");
+
+                        Console.WriteLine("0. 다음\n>> ");
+                        Console.ReadLine();
+                        if (player.HP <= 0)
+                        {
+                            Console.Clear();
+                            Console.WriteLine("Battle!! - Result\n");
+                            Console.WriteLine("You Lose\n");
+                            Console.WriteLine($"Lv.{player.Level} {player.Name}\nHP 100 -> 0\n");
+                            Console.WriteLine("0. 다음\n>> ");
+                            Console.ReadLine();
+                            return;
+                        }
+                    }
+                }
+                else if (input == "2")
+                {
+                    // 스킬 사용 로직 추가
+                    Console.WriteLine("\n사용할 스킬을 선택해주세요.");
+                    for (int i = 0; i < player.SkillList.Count; i++)
+                    {
+                        Skills skill = player.SkillList[i];
+                        Console.WriteLine($"{i + 1}. {skill.Name} (MP: {skill.MPCost}) - {skill.Description}");
+                    }
+                    Console.WriteLine("0. 취소");
+                    Console.Write(">> ");
+                    string skillSelect = Console.ReadLine();
+
+                    if (skillSelect == "0") continue;
+                    if (!int.TryParse(skillSelect, out int skillIndex) || skillIndex < 1 || skillIndex > player.SkillList.Count)
+                    {
+                        Console.WriteLine("잘못된 입력입니다.");
+                        Thread.Sleep(1000);
+                        continue;
+                    }
+
+                    Skills selectedSkill = player.SkillList[skillIndex - 1];
+
+                    // Skills 클래스의 UseSkill 메서드 호출
+                    bool skillUsed = Skills.UseSkill(selectedSkill, player, monsters, random);
+
+                    if (!skillUsed) continue;
+
+                    // 모든 몬스터가 죽었는지 확인
+                    if (monsters.All(m => m.IsDead))
+                    {
+                        Console.Clear();
+                        Console.WriteLine("Battle!! - Result\n");
+                        Console.WriteLine("Victory\n");
+                        Console.WriteLine($"던전에서 몬스터 {monsters.Count}마리를 잡았습니다.\n");
+                        int recoveredMana = 10;
+                        player.CurrentMana += recoveredMana;
+                        if (player.CurrentMana > player.MaxMana)
+                        {
+                            player.CurrentMana = player.MaxMana;
+                        }
+                        Console.WriteLine($"MP를 {recoveredMana} 회복합니다.\n");
+                        Console.WriteLine($"Lv.{player.Level} {player.Name}\nHP 100 -> {player.HP}");
+                        Console.WriteLine($"Lv.{player.Level} {player.Name}\nMP {player.CurrentMana - recoveredMana} ->  {player.CurrentMana}\n");
+                        Console.WriteLine("0. 다음\n>> ");
+                        Console.ReadLine();
+                        return;                                       
+
+
+                    }
+
+                    // 몬스터 턴
+                    for (int i = 0; i < monsters.Count; i++)
+                    {
+                        var m = monsters[i];
+                        if (m.IsDead) continue;
+
+                        Console.Clear();
+                        Console.WriteLine("Battle!!\n");
+                        Console.WriteLine($"{m.Name}의 공격!\n{player.Name}을(를) 맞췄습니다.");
+
+                        int monVar = (int)Math.Ceiling(m.Attack * 0.1);
+                        int rawDmg = random.Next(m.Attack - monVar, m.Attack + monVar + 1);
+                        int actualDmg = rawDmg - player.Defense;
+                        if (actualDmg < 0) actualDmg = 0;
+
+                        int prevHp = player.HP;
+                        player.HP -= actualDmg;
+                        if (player.HP < 0) player.HP = 0;
+
                         Console.WriteLine($"[데미지 : {actualDmg}] (원래 공격력: {rawDmg}, 방어력: {player.Defense})\n");
                         Console.WriteLine($"Lv.{player.Level} {player.Name}\nHP {prevHp} -> {player.HP}\n");
 

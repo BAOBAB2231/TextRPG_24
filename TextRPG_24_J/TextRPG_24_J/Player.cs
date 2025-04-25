@@ -1,6 +1,4 @@
-﻿
-
-namespace TextRPG_24_J
+﻿namespace TextRPG_24_J
 {
     public class Player
     {
@@ -12,7 +10,13 @@ namespace TextRPG_24_J
         public int BaseAttack { get; set; }
         public int BaseDefense { get; set; }
         public int HP { get; set; }
+        public int MaxMana { get; set; }  // 최대 마나
+
+        public int CurrentMana { get; set; } // 현재 마나
+
         public int Gold { get; set; }
+
+        public List<Skills> SkillList { get; set; }
 
         public List<Item> EquippedItems { get; } = new List<Item>();
         public void Equip(Item item)
@@ -71,7 +75,17 @@ namespace TextRPG_24_J
             BaseDefense = defense;
             HP = hp;
             Gold = gold;
+            MaxMana = 50;
+            CurrentMana = MaxMana;
+            SkillList = new List<Skills>();
+            GetSkill();
         }
+
+        void GetSkill()
+        {
+            SkillList = Skills.GetSkill(Attack);
+        }
+
         public void ShowStatus()
         {
             Console.WriteLine("\n상태 보기");
@@ -82,8 +96,9 @@ namespace TextRPG_24_J
             Console.WriteLine($"공격력 : {Attack}");
             Console.WriteLine($"방어력 : {Defense}");
             Console.WriteLine($"체  력 : {HP}");
+            Console.WriteLine($"마  나 : {CurrentMana}");
             Console.WriteLine($"Gold : {Gold} G\n");
-            
+
         }
 
     }
