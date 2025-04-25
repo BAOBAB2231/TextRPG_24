@@ -11,15 +11,16 @@
         public float CritMultiplier { get; set; } = 1.6f; // 치명타 배율 (기본값 : 160%)
         public float Evasion { get; set; } = 0.1f; // 회피 확률 (기본값 : 10%)
         public int HP { get; set; }
-        public int MaxMana { get; set; }  // 최대 마나
-
-        public int CurrentMana { get; set; } // 현재 마나
-
+        public int MaxHp { get; set; }           // ✅ 추가된 속성
+        public int MaxMana { get; set; }
+        public int CurrentMana { get; set; }
         public int Gold { get; set; }
+        public int Exp { get; set; }
+        public int MaxExp { get; set; }
 
         public List<Skills> SkillList { get; set; }
-
         public List<Item> EquippedItems { get; } = new List<Item>();
+
         public void Equip(Item item)
         {
             if (!item.IsEquipped)
@@ -37,6 +38,7 @@
                 item.IsEquipped = false;
             }
         }
+
         public int Attack
         {
             get
@@ -73,9 +75,12 @@
             BaseAttack = attack;
             BaseDefense = defense;
             HP = hp;
+            MaxHp = hp; // ✅ 생성자에서 초기화
             Gold = gold;
             MaxMana = 50;
             CurrentMana = MaxMana;
+            Exp = 0;
+            MaxExp = 40;
             SkillList = new List<Skills>();
             GetSkill();
         }
@@ -96,11 +101,10 @@
             Console.WriteLine($"치명타 피해 : {(CritMultiplier * 100):F0}%");
             Console.WriteLine($"회피율 : {(Evasion * 100):F0}%");
             Console.WriteLine($"방어력 : {Defense}");
-            Console.WriteLine($"체  력 : {HP}");
+            Console.WriteLine($"체  력 : {HP} / {MaxHp}"); // ✅ MaxHp 표시
             Console.WriteLine($"마  나 : {CurrentMana}");
-            Console.WriteLine($"Gold : {Gold} G\n");
-
+            Console.WriteLine($"Gold : {Gold} G");
+            Console.WriteLine($"Exp  : {Exp} / {MaxExp}\n");
         }
-
     }
 }

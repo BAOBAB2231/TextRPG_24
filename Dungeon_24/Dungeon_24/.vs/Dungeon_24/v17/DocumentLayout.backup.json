@@ -1,0 +1,75 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\qkgjd\\source\\repos\\SpartaDungeon_AllInOne_Framework472\\Dungeon_24\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{3916D1BD-F7DD-4E89-B034-4D3A9D049DBC}|Dungeon_24.csproj|c:\\users\\qkgjd\\source\\repos\\spartadungeon_allinone_framework472\\dungeon_24\\battlemanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3916D1BD-F7DD-4E89-B034-4D3A9D049DBC}|Dungeon_24.csproj|solutionrelative:battlemanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3916D1BD-F7DD-4E89-B034-4D3A9D049DBC}|Dungeon_24.csproj|c:\\users\\qkgjd\\source\\repos\\spartadungeon_allinone_framework472\\dungeon_24\\player.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3916D1BD-F7DD-4E89-B034-4D3A9D049DBC}|Dungeon_24.csproj|solutionrelative:player.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3916D1BD-F7DD-4E89-B034-4D3A9D049DBC}|Dungeon_24.csproj|c:\\users\\qkgjd\\source\\repos\\spartadungeon_allinone_framework472\\dungeon_24\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3916D1BD-F7DD-4E89-B034-4D3A9D049DBC}|Dungeon_24.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "BattleManager.cs",
+              "DocumentMoniker": "C:\\Users\\qkgjd\\source\\repos\\SpartaDungeon_AllInOne_Framework472\\Dungeon_24\\BattleManager.cs",
+              "RelativeDocumentMoniker": "BattleManager.cs",
+              "ToolTip": "C:\\Users\\qkgjd\\source\\repos\\SpartaDungeon_AllInOne_Framework472\\Dungeon_24\\BattleManager.cs",
+              "RelativeToolTip": "BattleManager.cs",
+              "ViewState": "AgIAAGEAAAAAAAAAAAAkwHAAAAA5AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-22T02:08:52.836Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Player.cs",
+              "DocumentMoniker": "C:\\Users\\qkgjd\\source\\repos\\SpartaDungeon_AllInOne_Framework472\\Dungeon_24\\Player.cs",
+              "RelativeDocumentMoniker": "Player.cs",
+              "ToolTip": "C:\\Users\\qkgjd\\source\\repos\\SpartaDungeon_AllInOne_Framework472\\Dungeon_24\\Player.cs",
+              "RelativeToolTip": "Player.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAxAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-22T02:05:05.312Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\qkgjd\\source\\repos\\SpartaDungeon_AllInOne_Framework472\\Dungeon_24\\Program.cs",
+              "RelativeDocumentMoniker": "Program.cs",
+              "ToolTip": "C:\\Users\\qkgjd\\source\\repos\\SpartaDungeon_AllInOne_Framework472\\Dungeon_24\\Program.cs",
+              "RelativeToolTip": "Program.cs",
+              "ViewState": "AgIAAAcAAAAAAAAAAAAAwCEAAAARAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-22T02:04:10.693Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{d78612c7-9962-4b83-95d9-268046dad23a}"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

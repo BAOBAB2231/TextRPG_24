@@ -2,7 +2,7 @@
 
 namespace TextRPG_24_J
 {
-    class ShopItem : Item
+    public class ShopItem : Item
     {
         public int Price { get; }
 
@@ -12,7 +12,7 @@ namespace TextRPG_24_J
             Price = price;
         }
 
-        public void Display(int index)
+        public new void Display(int index)
         {
             Console.WriteLine($"{index}. {Name.PadRight(15)} | {StatText} | {Description} | 가격: {Price} G");
         }
