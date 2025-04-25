@@ -1,4 +1,6 @@
-﻿namespace TextRPG_24_J
+﻿using static System.Net.Mime.MediaTypeNames;
+
+namespace TextRPG_24_J
 {
 
 
@@ -21,6 +23,7 @@
             MaxHp = hp;
             Hp = hp;
             Attack = atk;
+
         }
     }
 
@@ -112,12 +115,25 @@
                         continue;
                     }
 
+                    bool isEvaded = random.NextDouble() < target.Evasion; // 회피 판정
+                    bool isCrit = random.NextDouble() < player.CritRate; // 치명타 판정
 
                     int variation = (int)Math.Ceiling(player.Attack * 0.1);
                     int finalDamage = random.Next(player.Attack - variation, player.Attack + variation + 1);
-                    target.Hp -= finalDamage;
+
+                    if (isCrit) // 치명타가 발동하면 최종 데미지에 치명타 배율을 곱한다.
+                        finalDamage = (int)Math.Ceiling(finalDamage * player.CritMultiplier);
+
+                    if (!isEvaded) // 회피가 발동하면 데미지를 주지 않음.
+                        target.Hp -= finalDamage;
+
                     if (target.Hp < 0) target.Hp = 0;
-                    Console.WriteLine($"{target.Name}을(를) 공격했습니다! [데미지 : {finalDamage}]");
+
+                    if (!isEvaded) // 회피가 발동했을 시 문구 추가.
+                        Console.WriteLine($"{target.Name}을(를) 공격했습니다! [데미지 : {finalDamage}] {(isCrit ? "- 치명타 공격!!" : "")}"); // 치명타 발동 시 문구 추가.
+                    else
+                        Console.WriteLine($"{target.Name} 을(를) 공격했지만 아무일도 일어나지 않았습니다.");
+
                     Thread.Sleep(1000);
 
 
@@ -139,25 +155,42 @@
                         var m = monsters[i];
                         if (m.IsDead) continue;
 
-                        Console.Clear();
-                        Console.WriteLine("Battle!!\n");
-                        Console.WriteLine($"{m.Name}의 공격!\n{player.Name}을(를) 맞췄습니다.");
-
+                        isEvaded = random.NextDouble() < player.Evasion; // 회피 판정
+                        isCrit = random.NextDouble() < m.CritRate; // 치명타 판정
 
                         int monVar = (int)Math.Ceiling(m.Attack * 0.1);
                         int rawDmg = random.Next(m.Attack - monVar, m.Attack + monVar + 1);
 
 
                         int actualDmg = rawDmg - player.Defense;
+
+                        if (isCrit) // 치명타가 발동하면 최종 데미지에 치명타 배율을 곱한다.
+                            actualDmg = (int)Math.Ceiling(actualDmg * m.CritMultiplier);
+
                         if (actualDmg < 0) actualDmg = 0;
 
                         int prevHp = player.HP;
-                        player.HP -= actualDmg;
+
+                        if (!isEvaded) // 회피가 발동하면 데미지를 주지 않음.
+                            player.HP -= actualDmg;
+
                         if (player.HP < 0) player.HP = 0;
 
+                        Console.Clear();
+                        Console.WriteLine("Battle!!\n");
 
-                        Console.WriteLine($"[데미지 : {actualDmg}] (원래 공격력: {rawDmg}, 방어력: {player.Defense})\n");
-                        Console.WriteLine($"Lv.{player.Level} {player.Name}\nHP {prevHp} -> {player.HP}\n");
+                        if (!isEvaded) // 회피가 발동했을 시 문구 추가.
+                        {
+                            Console.WriteLine($"{m.Name}의 공격!\n{player.Name}을(를) 맞췄습니다.");
+
+                            Console.WriteLine($"[데미지 : {actualDmg}] {(isCrit ? "- 치명타 공격!!" : "")} (원래 공격력: {rawDmg}, 방어력: {player.Defense})\n"); // 치명타 발동 시 문구 추가.
+                            Console.WriteLine($"Lv.{player.Level} {player.Name}\nHP {prevHp} -> {player.HP}\n");
+                        }
+                        else
+                        {
+                            Console.WriteLine($"{m.Name}의 공격!");
+                            Console.WriteLine($"{player.Name} 을(를) 공격했지만 아무일도 일어나지 않았습니다.\n");
+                        }
 
                         Console.WriteLine("0. 다음\n>> ");
                         Console.ReadLine();
@@ -220,23 +253,42 @@
                         var m = monsters[i];
                         if (m.IsDead) continue;
 
-                        Console.Clear();
-                        Console.WriteLine("Battle!!\n");
-                        Console.WriteLine($"{m.Name}의 공격!\n{player.Name}을(를) 맞췄습니다.");
+                        bool isEvaded = random.NextDouble() < player.Evasion; // 회피 판정
+                        bool isCrit = random.NextDouble() < m.CritRate; // 치명타 판정
 
                         int monVar = (int)Math.Ceiling(m.Attack * 0.1);
                         int rawDmg = random.Next(m.Attack - monVar, m.Attack + monVar + 1);
                         int actualDmg = rawDmg - player.Defense;
+
+                        if (isCrit) // 치명타가 발동하면 최종 데미지에 치명타 배율을 곱한다.
+                            actualDmg = (int)Math.Ceiling(actualDmg * m.CritMultiplier);
+
                         if (actualDmg < 0) actualDmg = 0;
 
                         int prevHp = player.HP;
-                        player.HP -= actualDmg;
+
+                        if (!isEvaded) // 회피가 발동하면 데미지를 주지 않음.
+                            player.HP -= actualDmg;
+
                         if (player.HP < 0) player.HP = 0;
 
-                        Console.WriteLine($"[데미지 : {actualDmg}] (원래 공격력: {rawDmg}, 방어력: {player.Defense})\n");
-                        Console.WriteLine($"Lv.{player.Level} {player.Name}\nHP {prevHp} -> {player.HP}\n");
+                        Console.Clear();
+                        Console.WriteLine("Battle!!\n");
 
-                        Console.WriteLine("0. 다음\n>> ");
+                        if (!isEvaded) // 회피가 발동했을 시 문구 추가.
+                        {
+                            Console.WriteLine($"{m.Name}의 공격!\n{player.Name}을(를) 맞췄습니다.");
+
+                            Console.WriteLine($"[데미지 : {actualDmg}] {(isCrit ? "- 치명타 공격!!" : "")} (원래 공격력: {rawDmg}, 방어력: {player.Defense})\n"); // 치명타 발동 시 문구 추가.
+                            Console.WriteLine($"Lv.{player.Level} {player.Name}\nHP {prevHp} -> {player.HP}\n");
+                        }
+                        else
+                        {
+                            Console.WriteLine($"{m.Name}의 공격!");
+                            Console.WriteLine($"{player.Name} 을(를) 공격했지만 아무일도 일어나지 않았습니다.\n");
+                        }
+
+                            Console.WriteLine("0. 다음\n>> ");
                         Console.ReadLine();
                         if (player.HP <= 0)
                         {
