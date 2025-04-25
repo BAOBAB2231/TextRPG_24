@@ -11,15 +11,19 @@ namespace TextRPG_24_J
         public int MaxHp { get; set; }
         public int Hp { get; set; }
         public int Attack { get; set; }
+        public int Exp { get; set; }
+        public int Gold { get; set; }
         public bool IsDead => Hp <= 0;
 
-        public Monster(string name, int level, int hp, int atk)
+        public Monster(string name, int level, int hp, int atk,int exp, int gold)
         {
             Name = name;
             Level = level;
             MaxHp = hp;
             Hp = hp;
             Attack = atk;
+            Exp = exp;
+            Gold = gold;
         }
     }
 
@@ -42,13 +46,13 @@ namespace TextRPG_24_J
                 switch (type)
                 {
                     case 0:
-                        monsters.Add(new Monster("미니언", 2, 15, 5));
+                        monsters.Add(new Monster("미니언", 2, 15, 5, 1, 50));
                         break;
                     case 1:
-                        monsters.Add(new Monster("공허충", 3, 10, 9));
+                        monsters.Add(new Monster("공허충", 3, 10, 9, 2, 100));
                         break;
                     case 2:
-                        monsters.Add(new Monster("대포미니언", 5, 25, 8));
+                        monsters.Add(new Monster("대포미니언", 5, 25, 8,4, 200));
                         break;
                 }
             }
