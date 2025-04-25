@@ -205,10 +205,20 @@
                         Console.WriteLine("Battle!! - Result\n");
                         Console.WriteLine("Victory\n");
                         Console.WriteLine($"던전에서 몬스터 {monsters.Count}마리를 잡았습니다.\n");
-                        Console.WriteLine($"Lv.{player.Level} {player.Name}\nHP 100 -> {player.HP}\n");
+                        int recoveredMana = 10;
+                        player.CurrentMana += recoveredMana;
+                        if (player.CurrentMana > player.MaxMana)
+                        {
+                            player.CurrentMana = player.MaxMana;
+                        }
+                        Console.WriteLine($"MP를 {recoveredMana} 회복합니다.\n");
+                        Console.WriteLine($"Lv.{player.Level} {player.Name}\nHP 100 -> {player.HP}");
+                        Console.WriteLine($"Lv.{player.Level} {player.Name}\nMP {player.CurrentMana - recoveredMana} ->  {player.CurrentMana}\n");
                         Console.WriteLine("0. 다음\n>> ");
                         Console.ReadLine();
-                        return;
+                        return;                                       
+
+
                     }
 
                     // 몬스터 턴
